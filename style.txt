@@ -1,0 +1,687 @@
+1. What is media query in css ?
+apply different styles based on device features like screen size , making your webpage look good on any device.
+eg: @media screen and (max-width:600px){
+    body{
+        background-color:black;
+    }
+}
+
+2.what is the use of the calc() in CSS ?
+it is like a calculator for styling . it helps you to do math in stylesheet. so you can make your design more flexible and responsive.
+
+3.what is flexbox?
+flexbox is a css layout that allow to design complex layouts more easily and efficiently.
+it simple to arrange and space out elements in a container, so that web page is look good in any devices without alot of extra code.
+
+4.How to create shadow effect in css ?
+we can use the box-shadow, 
+eg:  .shadow{
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+2px: specifies horizontal offset of shadow
+2px: specifies vertical offset of shadow
+4px: specifies blur radius of the shadow
+rgba(0, 0 , 0, 0.2); : specifies the color and opacity of the shadow. black with 20% opacity.
+
+5.write about class selector and  id selector 
+id can be used to identify one element
+class can be used identify multiple html elements
+
+6.what are pseudo element?
+it is like imaginary element and used to style the specified part of an element.
+eg: 1. ::before : add content before an element's actual content. it is a firstchild of the selected element.
+    2. ::after : add content after an element's actual content.  it is a last child of the selected element.
+    3. ::first-line : style the first line of text with in an element. it applies style to the first line of a block container.
+    4. ::first-letter: style the first letter of text with in an element. it applies style to the first letter of the first line of a block container, but only when not preceded by other content.(such as imgs or inline table)
+    5. ::selection : style the portion of the text selected by the user.  it applies style to the part of a document that has been highlighted by the user. (such as clicking and dragging the mouse across text.)
+
+7.what is z index function ?
+Creating an overlay effect simply means putting two div together at the same place but both the div appear when needed i.e while hovering or while clicking on one of the div to make the second one appear.
+it is used for specifying over-lapping element, it is a number which can be +ve or -ve  and default value 0 . 
+z-index: auto|number|initial|inherit;
+
+8.What is css ? What is its primary purpose ?
+css stands for cascading style sheets.
+define web page presentation and layout.
+controls the fonts, color,spacing and positioning on a website.
+
+9.explain the difference between inline , internal and external css ?
+inline css: applied directly to individual html element using the style attribute.
+internal css : defined with in the html documents <style> tag in the head section.
+external css : stored in a separate .css file and linked to html using the <link> tag.
+
+
+10.What is the CSS box model , how it works ?
+describe how html components are displayed on screen.
+it specifies how an elements content, padding, border and margin are set. 
+
+
+4/07/2024
+
+11.How do you center an element horizontally and vertically in css ?
+   display: flex;
+   justify-content : center ;
+   align-item : center;
+
+12.Explain the difference between display:block , display:inline , & display: inline-block?
+   
+  display:block; : takes up a full width and starts on a new line.
+  display:inline; : takes up only as much width as needed, stays on the same line.
+  display:inline-block; : takes up only as width as needed , stays on the same line , but can have set width and height.
+
+13.What is box-sizing property , and how does it affect layout ?
+  it defines width and height calculation for elements.
+  content-box : it include only the content in calculations.
+  border-box: it includes padding and border in width and height calculations.
+
+14.How can you create a responsive design in css ?
+   responsive design , relative units , flexible layouts
+
+15.what are pseudo-classes and pseudo-elements in css ?
+   pseudo-classes defines special states of element. eg: :hover , :mousehover
+   pseudo-elements defines style the specific part of the element. eg: ::before , ::after for adding content.
+
+16.Explain the css float property and its uses.
+   float property for element alignment (left or right).The float property defines the flow of content
+   uses: text wrapping around images and multi-column layouts.
+   float: left	Element floats on the left side of the container
+float: right	Element floats on the right side of the container
+float: inherit	The element inherits the floating property of its parent (div, table, etc…)
+float: none	Element is displayed as it is (Default).
+
+17.What is the css position property , and what are its values ?
+static: default , normal flow (no special positioning)
+relative:shifted from its normal position.
+absolute: positioned relative to nearest positioned ancestor.
+fixed:position relative to viewport. stays in place when the page is scrolled.
+sticky: positioned based on the user's scroll position. Acts like `relative` until it reaches a scroll position, then acts like `fixed`.
+
+18. difference between flexbox and grid ?
+    flex-box is best for one-dimensional layouts like rows or columns.
+    while grid is ideal for 2 dimensional layouts with rows and columns.
+
+19.WHY WE USE FLEX IN TABLE ?
+flex-box offers more flexibility in designing layouts and aligning content compared to traditional html tables.
+
+20. difference between px , rem , em ?
+   px: fixed size eg: font-size:16px;
+   rem: relative to root element :  based on the font-size of the root element. eg: font-size: 3rem; (thrice the root element font size)
+   em:relative to parent eleemnt : based on the font size of the parent element. eg: font-size: 1.5 em; (1.5 times the parent element font size)
+
+
+5/07/24
+
+1.difference between SCSS and CSS ?
+scss is an enhanced version of css , that includes features like variables, and nesting to make stylesheets more organised and easier to maintain.
+while css is the basic styling language used on the web.
+
+2. difference between margin and padding ?
+margin is the space outside the border of an element, creating separation between elements.
+while padding is the space inside the border of an element , providing internal spacing for content with in the element.
+
+3.explain the universal selector ?
+the universal selector in css select all elements in html document, applying styles universally .
+
+4. what is css selector ?
+a css selector is a pattern used to select and style html element based on their attributes , types , classes or ids.
+there are different types of selector.
+eg: element selector , id selector ,class selector , universal selector , group selector .
+
+5.what is RWD ?
+RWD stands for responsive web design . it is an approach to design the web pages well in any devices .
+
+6.what is a css preprocessor ?(scss)
+A CSS preprocessor is a tool that enhances CSS by adding features like variables and reusable styles, making it easier to write and manage stylesheets for websites.
+
+7.why is @important only at the top ?
+The `@import` rule in CSS must be at the top of the stylesheet so that the imported styles load first and don't interfere with the rest of the styles.
+
+8.what are the different features in css3 ?
+flexbox and grid layout , transition and animation , media queries ,border radius and box shadow ,gradients.
+
+9.What are CSS HSL Colors?
+CSS HSL colors use Hue (0-360°), Saturation (0-100%), and Lightness (0-100%) to define colors.
+
+10.why do we use css ?
+css save time , easy maintainance 
+
+6/07/24
+1. What is the difference between CSS border and outline?
+Borders affect the layout and dimensions of an element, while outlines are drawn outside the border and do not affect layout.
+CSS border properties allow us to set the style, color, and width of the border.
+CSS outline property allows us to draw a line around the element, outside the border.
+
+2.What does the ‘a’ in rgba mean?
+RGBA contains a(alpha) which specify the transperncy of element. the value of alpha lies between 0.0 to 1.0 where 0.0 represent fully transparent and 1.0 represent not transparent.
+
+3.how can we format text in css ?
+text-color , text-alignment , text-decoration , text-transformation , text - direction etc.
+
+4.what are the different link state ?
+A link is a connection from one web page to another web page , css property can be used to style the links in various different ways.
+Links can exist in different states and they can be styled using pseudo-classes.
+a:link: This is a normal, unvisited link.
+a:visited: This is a link visited by a user at least once
+a:hover: This is a link when the mouse hovers over it
+a:active: This is a link that is just clicked.
+
+5.can we add a image as a list item marker ?
+we use the list-style-image property.
+eg: list-style-image: none | url | initial | inherit;
+
+6.how can we hide the element in css ?
+ The style display property is used to hide and show the content of HTML DOM by accessing the DOM element using JavaScript/jQuery.
+ To hide an element, set the style display property to “none”.
+
+display: "none";
+To show an element, set the style display property to “block”.
+
+display:"block";
+
+7.what is css overflow ?
+the css overflow controls the big content .It tells whether to clip content or to add scroll bars. The overflow contains the following property:
+1.visible
+2.hidden
+3.scroll
+4.auto
+1. Visible: The content is not clipped and is visible outside the element box.
+
+2. Hidden: The overflow is clipped and the rest of the content is invisible.
+
+3. Scroll: The overflow is clipped but a scrollbar is added to see the rest of the content. The scrollbar can be horizontal or vertical.
+
+4. Auto: It automatically adds a scrollbar whenever it is required.
+
+Overflow-x and Overflow-y: This property specifies how to change the overflow of elements. x deals with horizontal edges and y deals with vertical edges.
+
+8.How can we vertically center a text in CSS?
+This solution will work for a single line and multiple lines of text, but it still requires a fixed height container:
+
+div {
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    border: 2px dashed #f69c55;
+}
+span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+div{
+    GeeksforGeeks 
+}
+
+9.How can we add gradients in CSS?
+
+You can add gradients in CSS using the background-image property with the linear-gradient() or radial-gradient() functions. Here's a simple example:
+
+.gradient-example {
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+This creates a linear gradient from #ff7e5f to #feb47b horizontally (from left to right).
+
+10.Can we add 2D transformations to our project using CSS?
+Yes, we can, a transformation modifies an element by its shape, size, and position. It transforms the elements along the X-axis and Y-axis.
+There are six main types of 2D transformations which are listed below:
+
+translate()
+rotate()
+scale()
+skewX()
+skewY()
+matrix()
+
+7/07/24
+
+1.Can we add 3D transformations to our project using CSS?
+
+Yes, it allows changing elements using 3D transformations. In 3D transformation, the elements are rotated along the X-axis, Y-axis, and Z-axis.
+
+There are three main types of transformation which are listed below:
+
+rotateX()
+rotateY()
+rotateZ()
+
+2.What are CSS transitions?
+CSS transitions allow you to change property values smoothly (over a given duration) rather than abruptly. They are used to enhance the visual experience by animating changes to CSS properties when an element's state changes, such as on hover, focus, active, or any other state change.
+
+Example:
+```css
+.element {
+  transition: all 0.3s ease;
+}
+
+.element:hover {
+  background-color: blue;
+}
+```
+
+In this example, when the `.element` is hovered over, its background color will transition to blue over 0.3 seconds with an easing function applied.
+
+3.How can we animate using CSS?
+Sure! Here are two easy ways to animate using CSS:
+
+### Using CSS Transitions
+CSS transitions smoothly change property values over time.
+
+Example:
+```css
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transition: background-color 0.5s;
+}
+
+.box:hover {
+  background-color: blue;
+}
+```
+This example changes the background color of `.box` to blue smoothly when hovered over.
+
+### Using CSS Animations
+CSS animations allow more control with keyframes.
+
+Example:
+1. Define the animation:
+   ```css
+   @keyframes changeColor {
+     from {background-color: red;}
+     to {background-color: blue;}
+   }
+   ```
+
+2. Apply the animation to an element:
+   ```css
+   .box {
+     width: 100px;
+     height: 100px;
+     background-color: red;
+     animation: changeColor 2s infinite;
+   }
+   ```
+
+This example changes the background color of `.box` from red to blue over 2 seconds, repeating infinitely.
+
+4.What is CSS Grid?
+
+Sure! CSS Grid is a layout system that lets you create complex, responsive layouts using a grid of rows and columns.
+
+### Key Concepts
+
+1. **Grid Container**: The parent element with `display: grid;`.
+2. **Grid Items**: The direct children of the grid container.
+
+### Basic Properties
+
+#### On the Grid Container
+- `display: grid;` - Defines a grid container.
+- `grid-template-columns`: Sets the columns.
+- `grid-template-rows`: Sets the rows.
+- `gap`: Sets the space between items.
+
+#### On the Grid Items
+- `grid-column`: Defines the start and end positions for columns.
+- `grid-row`: Defines the start and end positions for rows.
+
+### Example
+```css
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.item1 {
+  grid-column: 1 / 3; /* Span 2 columns */
+}
+
+.item2 {
+  grid-row: 1 / 3; /* Span 2 rows */
+}
+```
+
+```html
+<div class="container">
+  <div class="item1">Item 1</div>
+  <div class="item2">Item 2</div>
+  <div class="item3">Item 3</div>
+  <div class="item4">Item 4</div>
+</div>
+```
+
+In this example:
+- The container has 3 equal columns.
+- Item 1 spans 2 columns.
+- Item 2 spans 2 rows.
+
+
+5.What is the best way to include a CSS file? Why use @import?
+### Best Way to Include a CSS File
+
+Use the `<link>` tag in the `<head>` section of your HTML document. This ensures efficient loading and fast page rendering.
+
+Example:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Hello, World!</h1>
+</body>
+</html>
+```
+
+### Why Use `@import`?
+
+`@import` can include CSS files within other CSS files, useful for organizing styles.
+
+Example:
+```css
+/* main.css */
+@import url('reset.css');
+@import url('typography.css');
+
+body {
+  font-family: Arial, sans-serif;
+}
+```
+
+#### Advantages:
+- **Organizes** CSS by splitting into multiple files.
+
+#### Disadvantages:
+- **Slower** page load due to additional HTTP requests.
+- **Less efficient** than `<link>` for performance.
+
+### Conclusion
+
+- **Use `<link>`** for best performance.
+- **Use `@import`** for organizing CSS when needed, but be aware of performance impact.
+
+6. What is @keframes used for? 
+`@keyframes` in CSS is used to define animations by specifying the style changes that occur at different points during an animation sequence.
+
+Example:
+```css
+@keyframes slidein {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.element {
+  animation: slidein 1s ease-out;
+}
+```
+
+In this example:
+- `@keyframes slidein` defines an animation called `slidein`.
+- `from` and `to` specify the starting and ending styles of the animation.
+- `.element` applies the `slidein` animation, causing it to slide in from the left over 1 second with an ease-out timing function.
+
+7. What are CSS counters?
+CSS counters are a feature in CSS that allow you to automatically increment or decrement values in your stylesheets. They are useful for generating numbered lists or applying unique labels to elements.
+
+### Basic Usage:
+
+1. **Define a Counter:**
+   ```css
+   .container {
+     counter-reset: section;
+   }
+   ```
+
+2. **Increment the Counter:**
+   ```css
+   .section-title::before {
+     counter-increment: section;
+     content: "Section " counter(section) ": ";
+   }
+   ```
+
+3. **Display the Counter:**
+   ```css
+   .section-title::before {
+     content: "Section " counter(section) ": ";
+   }
+   ```
+
+### Example:
+```html
+<div class="container">
+  <h2 class="section-title">Introduction</h2>
+  <p>This is the introduction section.</p>
+
+  <h2 class="section-title">Main Content</h2>
+  <p>This is the main content section.</p>
+</div>
+```
+
+In this example:
+- The `counter-reset` property initializes a counter named `section`.
+- The `counter-increment` property increments the `section` counter.
+- The `counter()` function displays the current value of the `section` counter.
+
+CSS counters provide a way to generate and manage dynamic content numbering or labeling directly in your stylesheets.
+
+8. How can we use pagination in CSS?
+
+Pagination is the process of dividing the document into pages and providing them with numbers.
+
+Types of Pagination: There are many types of pagination in CSS. Some of them are given below:
+
+Simple Pagination
+Active and Hoverable Pagination
+Rounded Active and Hoverable Buttons
+Hoverable Transition Effect
+Bordered Pagination
+Rounded Border Pagination
+Centered Pagination
+Space between Pagination
+Pagination Size
+
+Simple Pagination: This is the basic form of pagination.
+
+Syntax:
+
+.pagination {
+    display:type
+}
+.pagination body {
+    color:colorname
+    decoration:type
+}
+
+9.What is CSS Image reflection?
+The box-reflect property is used to create an image reflection.
+
+Attributes:
+
+below: to create a reflection below the original image
+above: to create a reflection above the original image
+left: to create a reflection on the left side of the original image
+right: to create a reflection on the right side of the original image
+Example:
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        img {
+            -webkit-box-reflect: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Image Reflection</h1>
+    <p>Shows the reflection of the image on right side:</p>
+    <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20210322123023/gfg2.png">
+</body>
+
+</html>
+
+
+10.How can we create multiple columns of text-like newspapers using CSS?
+The multiple columns are used to create column layouts on the web pages. There are many column properties in CSS which are listed below: 
+
+column-count
+column-gap
+column-rule-style
+column-rule-width
+column-rule-color
+column-rule
+column-span
+column-width
+
+
+8/07/24
+
+1.How can we give a shadow effect to our text in CSS?
+You can give a shadow effect to text in CSS using the `text-shadow` property. Here's a short example:
+
+```css
+.text-with-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+```
+
+- `2px` is the horizontal shadow offset.
+- `2px` is the vertical shadow offset.
+- `4px` is the blur radius.
+- `rgba(0, 0, 0, 0.5)` is the shadow color with transparency.
+
+Apply the `.text-with-shadow` class to your HTML element to see the shadow effect on the text. Adjust values as needed for different effects.
+
+2.What is !important?
+In CSS, `!important` is a declaration that gives a style rule higher priority, overriding normal rules applied to an element.
+
+**Example:**
+```css
+p {
+  color: blue !important;
+}
+```
+
+In this example, the `color: blue !important;` rule ensures that all `<p>` elements will have blue text color, even if other rules attempt to set a different color. Use `!important` sparingly to avoid complicating CSS specificity and maintainable code.
+
+3.What is specificity in CSS?
+Specificity in CSS determines which styles are applied to an element when multiple conflicting rules exist.
+
+- **Hierarchy:** Rules with higher specificity override those with lower specificity.
+- **Calculation:** Specificity is calculated based on the types of selectors used:
+  - ID selectors (`#example`) have the highest specificity.
+  - Class selectors (`.example`), attribute selectors (`[type="text"]`), and pseudo-classes (`:hover`) have medium specificity.
+  - Element selectors (`div`, `p`), pseudo-elements (`::before`, `::after`), and universal selectors (`*`) have the lowest specificity.
+
+**Example:**
+```css
+#main-content .article p {
+  color: blue; /* Specificity: 0-1-2 */
+}
+
+.article p {
+  color: red; /* Specificity: 0-1-1 */
+}
+
+p {
+  color: green; /* Specificity: 0-0-1 */
+}
+```
+
+In this example, the `#main-content .article p` rule will apply because it has the highest specificity, followed by `.article p`, and then `p`. Understanding specificity helps ensure that styles are applied as intended and resolves conflicts in CSS rules effectively.
+
+4.What are the attribute selectors?
+Attribute selectors in CSS allow you to style elements based on their attributes. They include:
+- **Existence:** `[attr]` targets elements with a specified attribute.
+- **Equality:** `[attr=value]` targets elements where the attribute value matches exactly.
+- **Prefix:** `[attr^=value]` targets elements where the attribute value starts with "value".
+- **Suffix:** `[attr$=value]` targets elements where the attribute value ends with "value".
+- **Substring:** `[attr*=value]` targets elements where the attribute value contains "value".
+
+5.What is a CSS Preprocessor? What are Sass, Less, and Stylus? Why do people use them?
+A CSS preprocessor is a tool that extends CSS with additional features like variables, mixins, functions, and nested syntax, which are not natively available in traditional CSS. Preprocessors help developers write cleaner, more maintainable CSS code and improve productivity by allowing reuse of styles and easier management of complex stylesheets.
+
+**Examples:**
+- **Sass (Syntactically Awesome Style Sheets):** Uses `.scss` or `.sass` syntax, offers variables, nesting, mixins, inheritance, and functions.
+- **Less:** Uses `.less` syntax, similar to Sass but with a simpler feature set.
+- **Stylus:** Uses `.styl` syntax, aims for simplicity and readability with minimal syntax.
+
+**Reasons for using CSS preprocessors:**
+1. **Variables:** Define reusable values (e.g., colors, font sizes) to maintain consistency.
+2. **Mixins:** Reuse blocks of CSS across stylesheets (e.g., vendor prefixes, animations).
+3. **Nested Syntax:** Organize CSS rules hierarchically, improving readability.
+4. **Functions:** Perform calculations (e.g., color manipulation) directly in stylesheets.
+5. **Importing:** Split stylesheets into smaller, modular files for better organization.
+
+Overall, CSS preprocessors enhance development efficiency and maintainability by extending CSS with advanced features that streamline the styling process.
+
+
+6.What is VH/VW (viewport height/ viewport width) in CSS?
+In CSS, `vh` (viewport height) and `vw` (viewport width) are relative units of measurement based on the size of the viewport (the visible portion of the browser window).
+
+- **Viewport Height (`vh`):** Represents a percentage of the full height of the viewport.
+  - Example: `height: 50vh;` sets the element's height to 50% of the viewport height.
+
+- **Viewport Width (`vw`):** Represents a percentage of the full width of the viewport.
+  - Example: `width: 25vw;` sets the element's width to 25% of the viewport width.
+
+These units are useful for creating responsive designs that adapt to different screen sizes, ensuring elements scale proportionally to the viewport dimensions.
+
+
+7.Difference between reset vs normalize CSS?. How do they differ?
+Sure!
+
+- **Reset CSS:** Starts with all styles reset to zero or default values, offering a blank canvas for styling.
+- **Normalize CSS:** Preserves useful default browser styles and ensures consistent styles across different browsers without resetting everything.
+
+
+8.Is it important to test the webpage in different browsers?
+yes, Testing webpages in different browsers is crucial to ensure consistent appearance, functionality, and user experience across various platforms and devices.
+
+9.Does margin-top or margin-bottom have an effect on inline elements?
+In CSS, `margin-top` and `margin-bottom` do not directly affect inline elements like `<span>` or `<a>`. Inline elements typically respect horizontal spacing (left and right margins) but generally ignore vertical margins (`margin-top` and `margin-bottom`). These properties are more commonly applied to block-level elements, such as `<div>` or `<p>`.
+
+
+10.What property is used for changing the font face?
+Use the `font-family` property in CSS to change the font face.
+
+9/07/24
+1.What are the differences between adaptive design and responsive design?
+- **Responsive Design:** Adjusts smoothly to different screen sizes by flexibly resizing elements and layouts.
+
+- **Adaptive Design:** Provides specific layouts for predefined device sizes or breakpoints, offering targeted experiences based on screen detection.
+
+2.How is opacity specified in CSS3? 
+Opacity in CSS3 is specified using the `opacity` property, which sets the transparency level of an element.
+
+- **Example:**
+  ```css
+  .element {
+    opacity: 0.5; /* Makes the element 50% transparent */
+  }
+  ```
+
+- **Values:** 
+  - `opacity: 0;` makes the element fully transparent (invisible).
+  - `opacity: 1;` makes the element fully opaque (normal).
+
+This property affects the entire element, including its children, and can be used with values from `0` (fully transparent) to `1` (fully opaque).
+
+
+
+

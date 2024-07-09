@@ -1,0 +1,384 @@
+1.What is HTML ?
+HTML is a hyper text mark up language , for creating web pages . 
+define content and elements using tags and elements.
+
+2. What is tag?
+Enclosed in angle bracket (<>) to define web page element.
+define the content structure and display in web browser.
+
+3.Do all html tag have end tag ?
+no, not all html tag are require end tag, some tags like <br> , <img> , <input> are self closing tags.
+meaning they dont have a corressponding closing tag.
+these tags are used to insert specific elment in to html documents. such as line break , imgs , or i/p fields
+and don't contain any content that needs to be enclosed. 
+
+for ex: <br> : it is used for line breaks.
+        <img> : it is used to insert images.
+        <input> : it is used for input fields like text boxes or buttons.
+
+
+4.what is formatting in html ?
+formatting means we can make the txt bold , italic , or underlined , adjusting text size , creating lists , or adding color and backgrounds.
+common list type in html are :
+1.ordered list (<ol>) : Numbered list item
+2.unordered list : Bullet-pointed list items. 
+3.defination list : Term- defination pairs
+4.nested lists : list within lists for hirarchical organisation. 
+
+5.importance in  Doctype in html ?
+The <Doctype HTML> declarations tells the browser to render the web page using the latest HTML standards.
+it is written at the top of the html document.it is not a tag.
+
+6.what do you know about metadata ?
+Metadata in html provides info about the webpage, such as the title , descriptions and keyword which helps search engine and browsers 
+ understand and display the content properly.
+
+7.Purpose of iframe in html tag ?
+<iframe> is used to embed a separate web page inside the current web page.
+It allows you to include external content like maps or videos on your web page.
+
+8. use of <pre> tag and <span> tag  and <div> tag?
+   <pre> tag used for preformatted text.
+   <span> tag is used for grouping and applying styles to inline element.
+   <div> similar to div which is  block level tag.
+
+
+9. Advantags of using frames ?
+allow multiple document to be viewed with a single web page.
+
+10. some example of inline and block level element ?
+
+inline elements :
+<span> : grouping inline elements or applying styles.
+<a> : Anchor tag used for hyperlinks.
+<strong> : it rendered as bold.
+<em> : Emphasizes text , typically rendered in italics.
+<img> : embeded imgs inline with in the txt flow.
+
+
+block level element :
+<div>: A generic container for grouping content , often used with css for layout.
+<p> : paragraph tag used for paragraph of text.
+<h1>,....<h6> : heading tag used for defining section heading.
+<ul>, <ol> , <li> : Tags for creating unordered and ordered list.
+<table> , <tr> , <td> : tags for creating tables and their rows and cells.
+
+
+11. display between visibility:hidden and display:none ?
+    visibility:hidden : simply hide the element , space is allocated for it on the page.  visibility property is used to hide or show the content of HTML elements. visibility : 'hidden';
+visibility :'visible';
+    display:none : hide the element and no space is allocated for it on the page.
+
+12. svg full form ?
+scalable vector graphics 
+
+/*4/07/24 */
+13.What do you understand by frontend development ?
+focus on creating the user interface for web application.
+
+14.What is the difference between HTML  and HTML5 ?
+  HTML5 is the latest version.
+  multimedia support : native support for audio and video.
+  semantic elements : enhanced semantic tag like <header> and <nav>.
+  better form input :improved input types like date , email and range.
+  improved accessibility , cleaner code , mobile optimization , game development
+
+15.Explain basic structure of an html document ?
+html document has 2 primary section : <head> and <body>
+<head> include metadata and links to the external resources.like title , char, encoding , script ,stylesheets
+<body> contain visible content (text, img ,links)
+
+16.What is the difference beween block level and inline elements ?
+block level element take up the full width and start on a new line.
+while inline element only take up the necessary width and stay on the same line.
+
+17.what is semantic html ?
+semantic html uses elements like <header> , <footer> and <nav> to convey meaning and structure in web content.
+these elements enhance comprehension for users and improve search engine understanding.
+<div> and <span> are non-semantic element.
+
+18.what is html form ?
+collects user inputs.
+<form> is used to create a form.
+purpose : submit the form to a server for processing.
+
+19.what is  an html entity?
+html entities are special code in html.
+display reserved char and symbol.
+eg: %lt; for "<" and &amp; for "&".
+essential for rendering special html char.
+
+<	&lt;	&#60;
+>	&gt;	&#62;
+&	&amp;	&#38;
+(non-breaking space) Eg. 10  PM	&nbsp; Eg. <p>10&nbsp&nbspPM</p>	&#160;
+
+20.difference between GET request and POST request ?
+get request: used to obtain info from a server.
+     the data is sent in to the request'S URL.
+     used to retrive static data , like a web page or an img.
+
+post request : used to communicate with a server.
+               the data is sent in the request's body.
+               used to submit form like login or contact form.
+
+21. what are the new tag in html5?
+   <article> , <section>, <header> , <footer> , <nav> , <aside> , <figure>, <figurecaption> , <main>
+
+22.what are the new i/p tag type in html5?
+color: provides a color picker interface for selecting a color.
+date: allow the user to pick a date from a date picker.
+time: enable the user to select a time.
+date-time: allow the user to pick a date & time in a specific time zone.
+month: select a month and year.
+week , tel , number , range , search etc.
+
+
+5/07/24
+
+1.should we inject div inside a span tag?
+yes , you can technically put a <div> inside a span & html will not produce an error.
+however, it is not symantically correct.
+
+2.  What is HTTP?
+HTTP stands for hyper text transfer protocol. it is a fundamental protocol used for communication on the www (world wide web).
+
+3.What is the difference between HTTP and HTTPS?
+http is an unsecured protocol for transfering data between a web server and a browser.
+while https is a secured version of http that encrypts the data to protect it from interception.
+
+4.When we open some websites, what is the order of loading HTML, CSS, and JS?
+first the html loads, then the css and finally the js.
+
+5.what is Element in html ?
+element represent different part of web page and can hold text , img , links and more.
+
+6.what are attribute in html ?
+attribute in html provides additional information about elements and are included in the opening tag like href in a <a> tag.
+eg: <a href="url"></a>
+
+7.What are the differences between the <canvas> and <svg> elements in HTML5?
+<canvas> renders pixel based graphics for dynamic content.
+while <svg> defines scalable vector graphics as DOM objects.
+ Advantags of svg :
+ svg images can be created and edited with any text editor.
+ svg images can be searched , indexed , scripted, and compressed.
+ svg images are scalable.
+ svg images can be printd with high quality at any resolution.
+
+8.What are HTML templates? How can they improve web performance?
+HTML templates are reusable structures that help reduce repetition in web pages, making sites load faster by minimizing redundant code.
+
+9.what are the new from elements in html5 ?
+ <datalist> , <keyen> , <output> , <meter> , <progress> with color , date , datetime, time, email , month
+
+10. what is Geo-location in HTML5 ?
+   Geo-location in HTML5 allows web application to accress and use the user's physical location through their device.like a smart phone or computer.
+
+
+6/07/24
+
+1. what are void elements ?
+   void element in HML tag that do not have closing tag like <img> , <br> and <input>.
+
+2.  Are <b> and <strong> tags same? If not, then why?
+no, <b> is for bold text without emphasis , while <strong> is for imp text with strong emphasis.(Emphasis means highlighting text)
+
+3.target attribute in html ?
+it specifies where to open the linked document, like '_blank' for a new tab or window.
+Attribute Values:
+
+_blank: It opens the link in a new window.
+_self: It opens the linked document in the same frame.
+_parent: It opens the linked document in the parent frameset.
+_top: It opens the linked document in the full body of the window.
+framename: It opens the linked document in the named frame.
+
+4.difference between LocalStorage and session storage objects ?
+localStorage is available even after closing and opening the browser window.
+eg:accept cookies etc
+sessionStorage : it  is available only when a browser's tab is open.
+eg: user login details , tokens etc.
+
+5.how to optimize website loading ?
+minimize HTTP request
+compress images and files
+use a content delivery network
+enable browser caching
+optimise server response time
+
+6.differnece between input button and button tag 
+<input type="button"> is a self-closing element for creating a button.
+while <button> can contain text or other html elements and is more flexible for styling.
+
+7.unsemantic in html ?
+<div>, <span> dont convey any specific meaning about their content.
+
+8. What is the difference between <em> and <i> tags?
+`<em>` emphasizes the importance of text, while `<i>` italicizes text for stylistic reasons without implying importance.
+
+9.What are the different formats in which colors in HTML can be declared?
+built in color
+rgba format
+rgb format
+hexadecimal notation
+HSL
+HSLA
+
+10.What is the use of alt attribute in images?
+The <img> alt attribute is used to specify the alternate text for an image. It is useful when the image is not displayed. It is used to give alternative information for an image.
+eg: <img alt="text">
+
+7/07/24
+
+1.What is the advantage of collapsing white space?
+Collapsing white space reduces the file size and improves load times, enhancing web performance.
+
+2. define the multipart form data ?
+Multipart form data in HTML is a method of encoding form fields and files for submission, allowing the upload of binary data.
+
+3.what are the various formatting tag in html ?
+Various formatting tags in HTML include:
+
+- `<b>`: Bold text
+- `<i>`: Italic text
+- `<u>`: Underlined text
+- `<strong>`: Important text (bold)
+- `<em>`: Emphasized text (italic)
+- `<mark>`: Highlighted text
+- `<small>`: Smaller text
+- `<del>`: Deleted text (strikethrough)
+- `<ins>`: Inserted text (underlined)
+- `<sub>`: Subscript text
+- `<sup>`: Superscript text
+- `<code>`: Computer code text
+- `<pre>`: Preformatted text
+- `<blockquote>`: Block quotation
+
+
+4.Are the HTML tags and elements the same thing?
+No, HTML tags are the specific markers enclosed in angle brackets (e.g., `<p>`, `</p>`), 
+while HTML elements consist of the tags and their content (e.g., `<p>This is a paragraph.</p>`).
+
+5.How is Cell Padding different from Cell Spacing?
+Cell padding is the space inside a table cell between its content and border, while cell spacing is the space between adjacent table cells.
+
+6.How can we club two or more rows or columns into a single row or column in an HTML table?
+You can use the `rowspan` or `colspan` attributes to merge rows or columns in an HTML table:
+
+<td rowspan="2">Merged Row</td>
+<td colspan="2">Merged Column</td>
+
+7.Is it possible to change an inline element into a block level element?
+Yes, you can change an inline element into a block-level element using CSS by setting its `display` property to `block`:
+
+span {
+  display: block;
+}
+
+8. In how many ways you can display HTML elements?
+HTML elements can be displayed in several ways using the CSS `display` property. Here are the main permissible values:
+
+1. `block` - Displays an element as a block element (like `<div>`).
+2. `inline` - Displays an element as an inline element (like `<span>`).
+3. `inline-block` - Displays an element as an inline-level block container.
+4. `none` - Hides the element (it will not be displayed).
+5. `flex` - Displays an element as a block-level flex container.
+6. `inline-flex` - Displays an element as an inline-level flex container.
+7. `grid` - Displays an element as a block-level grid container.
+8. `inline-grid` - Displays an element as an inline-level grid container.
+9. `table` - Displays an element as a block-level table (like `<table>`).
+10. `inline-table` - Displays an element as an inline-level table.
+11. `table-row` - Displays an element as a table row (like `<tr>`).
+12. `table-cell` - Displays an element as a table cell (like `<td>`).
+13. `list-item` - Displays an element as a list item (like `<li>`).
+
+9.Difference between link tag <link> and anchor tag <a>?
+Sure, here’s a brief comparison:
+
+### `<link>` Tag:
+- **Purpose**: Links to external resources (e.g., stylesheets).
+- **Common Use**: Adding CSS files to HTML.
+- **Example**:
+  ```html
+  <link href="styles.css" rel="stylesheet">
+  ```
+
+### `<a>` Tag:
+- **Purpose**: Creates hyperlinks to other pages or locations.
+- **Common Use**: Making clickable links.
+- **Example**:
+  ```html
+  <a href="https://www.example.com" target="_blank">Visit Example</a>
+  ```
+
+**Key Difference**: `<link>` is for external resources; `<a>` is for navigation links.
+
+10.When to use scripts in the head and when to use scripts in the body?
+### Scripts in the `<head>`:
+- **Use When**: Essential for initial page rendering.
+- **Example**: Analytics, necessary libraries.
+- **Drawback**: Can slow down page loading.
+
+```html
+<head>
+  <script src="essential.js"></script>
+</head>
+```
+
+### Scripts in the `<body>` (end of the body):
+- **Use When**: Enhances or interacts with page content after it loads.
+- **Example**: DOM manipulation, event handlers.
+- **Benefit**: Faster initial page load.
+
+```html
+<body>
+  <!-- Page content -->
+  <script src="interactive.js"></script>
+</body>
+```
+
+### Best Practice:
+- **Use `defer`**: Ensures the script runs after HTML parsing, without blocking rendering.
+- **Use `async`**: Downloads and executes the script as soon as it's ready, without blocking rendering.
+
+```html
+<head>
+  <script src="script.js" defer></script>
+</head>
+```
+
+```html
+<body>
+  <!-- Page content -->
+  <script src="script.js" async></script>
+</body>
+```
+
+8/07/24
+
+1.How to handle events in HTML?
+
+
+1. **Event Attributes**:
+   - Directly specify event handlers in HTML tags.
+   - Example: `<button onclick="alert('Button clicked!')">Click me</button>`
+
+2. **Event Listeners (JavaScript)**:
+   - Use JavaScript to attach event listeners to elements.
+   - Example:
+     
+     <button id="myButton">Click me</button>
+     <script>
+       document.getElementById('myButton').addEventListener('click', function() {
+         alert('Button clicked!');
+       });
+     </script>
+   
+
+3. **Key Concepts**:
+   - Events like `click`, `mouseover`, `keydown` respond to user actions.
+   - Event listeners offer flexibility and separation of logic.
+
+These methods enable interactive behavior in web pages by responding to user actions effectively.
+
