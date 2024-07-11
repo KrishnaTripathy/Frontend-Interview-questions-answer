@@ -1,0 +1,1644 @@
+1. how many ways to write js ?
+inline javascript : js code can be directly embdded with in html using the <script> tag src attribute. 
+internal js : js code can be included with in the script tag directly with in the html document's <head> or <body> section.
+external js: js code can be written in a separate file with a .js extension and then link to an html dcoument using the <script> tag , src attribute.
+
+2.what is ES6 ?
+ES6 is the 6th major version of js language specification, introducing new features like arrrow function , classes and template literals.
+
+3.write about ES6 features ?
+1. Arrow functions : it is useful for short one-line functions.
+eg: const add = (x,y) => x+y;
+    add(2,3);
+2.classes: introduced class based object oriented programming syntax to js, making it easier to create and manage objects and their behaviour.
+eg: class krishna {
+    start() {
+        console.log("start");
+    } 
+    stop() {
+        console.log("stop");
+    }
+    setBrand(brand){
+        this.brand = brand;
+    }
+}
+let deepa = new krishna(); // deepa becames a object 
+deepa.start();
+deepa.setBrand("deepa");
+3.Template literals: it is a special strings that allow you to include variables and expressions easily.using backticks (``) instead of regular 
+                     quotes and  `${}` to insert values.
+4. let & const : provides block-scoped variables with let , allowing for better variable scopeing .
+                 and const for declaring constants whose value can not be reassigned.
+5.destructuring : enables extracting values from array or object into variable with a simpler syntax.
+eg: let {a,b} = {a=1, b=2}
+    console.log(a,b);//1,2
+6.Enhanced array method : introduces new array method like map , filter and reduce for easier manipulation and iterations over arrays.
+7.spread and rest operator: spread operator (...)allows spreading elements of an array or objects in to another array or objects.
+eg:let arr1 = [3,5,8];
+   let obj1 = {...arr1}
+   console.log(obj1);
+   function sum(v1, v2, v3){
+    return v1 + v2+ v3;
+   }
+   console.log(sum(...arr1));
+  while the rest parameter (...) collects multiple arguments into a single array parameter in a function.
+  eg:function collectThings(x,...y){
+    console.log(x);
+    console.log(y);
+  }
+  collectThings(1,2,3,4,5,6,7,8,9);
+  op: x:1
+      y: 2,3,4,5,6,7,8,9
+
+  These ES6 features significantly improve JavaScript syntax, readability, and developer productivity.
+
+4.DETAILS ABOUT SCRIPT , SCRIPT ASYNC  , SCRIPT DEFER SHORTLY EASY WAY ?
+<script> tag loads js file, <script async> loads them asynchronously while continuing html parsing and <script defer> loads them asynchronously
+but execute after html parsing , maintaining order.
+
+5. what is js? how it is different from java ?
+javascript is a high level interpreted scripting language. it is used for web development.
+java vs js: java is client side environment js is server side environment .
+            dynamically types js is statistically typed.
+
+6. explain the difference between null and undefined ?
+null is a value that means no value or empty and it is explictly assigned to a varibale.
+undefined means variable declared but not assigned a value.
+
+7.what is difference between let , const and var ?
+
+var: it is function scoped , can be redeclared.
+let: block scoped , can be reassigned .
+const : block scoped constants can not be reassigned.
+
+8.what are the different datatypes in javascript ?
+
+Number: a number can be any integer or floating point value.
+string : a string is a sequence of char.
+boolean: a boolean can be either true or false.
+null : it is a special value that represent a absence of a value.
+undefined : variable is declared but not assigned a value.
+symbol : a symbol is a unique value that can be used to identify an object.
+BigInt : A BigInt is an integer  that is too large to be represented by a regular js number.
+
+9.What are events in javascript ?
+events in js are actions like clicks or key presses that your code can listen for and respond to.
+eg: let btn1 = document.querySelector("#btn");
+btn1.addeventListener("click", () => 
+{
+    console.log("clicked");
+});
+
+10.What is the difference between "==" and "===" operators in Js ?
+"==" compares value for equality allowing type conversion where as "===" compares both values and types for strict equality.
+
+4/07/2024
+
+11. What is hoisting in Js?
+hoisting is a mechanism in js where the variable declarations are moved to the top of the scope before execution.
+getName();
+console.log(x);
+                    
+var x= 7;
+function getName() {
+    console.log("namaste js");
+}
+// op: namaste js
+//     undefined 
+
+
+console.log(myVar); // Output: undefined
+var myVar = 5;
+console.log(myVar); // Output: 5
+
+
+console.log(myFunction()); // Output: "Hello, world!"
+
+function myFunction() {
+  return "Hello, world!";
+}
+
+
+12.explain closure in js?
+closure means a function bind together with its lexical environment.
+eg:
+function x() {
+    var a=7;
+    function y() {
+        console.log(a);
+    }
+    return y;
+}
+var z=x();
+console.log(z);
+z();
+//once you invoke x y will be return over here.
+// op:ƒ y() {
+//     console.log(a);
+// }
+// 7
+
+use of the closure :
+module design pattern
+currying
+function like once
+memoize
+maintaining state in async world
+setTimeOut
+iterators
+
+
+13. What is event loop in Javascript?
+it is check to the callback queue and put this function of the call back queue in to the call stack.
+it create a execution context , then line by line execute the callback function.
+
+14.How does prototypal inheritance work in Javascript?
+objects inherits properties and methods via their prototype chain. each object posesses a prototype .
+when property and method is absent on an object ,js searches for it in the prototype chain.
+
+eg: let animal = {
+    eats: true
+};
+let rabbit = {
+    jumps :true
+};
+rabbit.__proto__ = animal;
+console.log(rabbit.jumps); //t
+console.log(rabbit.eats)l //T 
+
+15.how can you handle asynchronous opearations in Js ?
+asynchronous operation can be managed through callbacks, promises, or async/await.
+callback are functions passed as arguments execute when asynchronous operation finish.
+promises offer structured handling of asynchronous code.
+asyn/await provides a modern and synchronous style approach to asynchronous code.
+
+
+16.Explain the concept of 'this' in Javascript.
+this refers to the current context or object in which a function is executed.
+in a method this refers to a object.
+in a regular function , this refers to the global object.
+arrow function maintain the this value of their surrounding lexical context.
+
+17.What are promises in Js?
+a promise is an object representing the external completion of an asynchronous operation.
+promise object is a placeholder for a ceratin period of time , until you receive a value from a asynchronous operation.
+
+18.Describe the 'callback hell' problem in JS and how it can be  mitigated.
+call back hell or pyramid of doom occurs due to nested of callback. and making code hard to read.
+mitigation : using promises ans asyn/await to controls call backs , improving cade readability and managability.
+
+
+19.name all basic non-primitive datatypes.
+object, array
+
+20.what is the need of js framework ?
+auto ui upgraded.
+auto list generation.
+best code structure
+plug and paly build tools
+easy testing 
+
+5/07/24
+
+1.what are the different types of loop in js ?
+for , for in , while , do while
+
+2. diffence betwwen arrow function and function in js ?
+arrow function are concise and preserve the lexical 'this' context ,
+while regular functions have a more traditional syntax and handle this based on how they are called.
+
+3.what is use strict in js?
+ 'use strict' in js activates strict mode , which helps catch errors and enforce safer coding practices.
+
+4.what is a web worker ?
+A web worker is a JavaScript feature that allows you to run scripts in the background, independently of the user interface, enabling tasks to be performed without freezing the main page.
+
+5.which keyword are used to handle exception ?
+In JavaScript, the keywords used to handle exceptions are `try`, `catch`, `finally`, and `throw`.
+
+6.how do js framework work in background ?
+JavaScript frameworks automate tasks like updating the webpage and managing data, using virtual DOM or efficient change detection to make web applications more responsive and organized.
+
+7.how to check wheather a variable is array or not ?
+you can use the 'Array.isArray()'  to check wheather a variable is an array or not.
+
+eg: let myVariable = [1,2,3,4,5];
+if(Array.isArray == myVariable){
+    console.log("true");
+}
+else
+{
+    console.log("false");
+}
+
+8.do you know any other apart from isArray ?
+we can also use the instanceof operator to check if a variable is an array.
+eg: let myVariable = [1,2,3, 4];
+  if (myVariable instanceof Array){
+    console.log("yes");
+  }
+  else{
+    console.log("no");
+  }
+9.difference between primitive js vs object js or non premeitive js ?
+primitive js : primitive values are immutable and stored directly in memory.
+            eg: number , string , boolean , null and undefined.
+non-primitive js : it is mutable stored as reference in memory.
+                   eg: object , array , function 
+
+
+10. how to convert a string to number .
+eg: let str = "123";
+let num = parseInt(str);
+eg:
+let str = "123";
+let num1 = parseInt(str); // num1 = 123
+let num2 = parseFloat("3.14"); // num2 = 3.14
+
+6/07/24
+
+1.diffence between getElementById and querySelector ?
+getElementById(id): Targets a single, unique element by ID.
+querySelector(selector): Can target multiple elements but returns only the first match.
+
+2.what is insertRow() in js ?
+it is used to add a new row to a table at a specified position.
+
+3.what is insertCell() in js write in one line easy way
+it is used to add a new cell (column) to a table row at a specified position.
+
+4.How to check if a variable is number or not ?
+we can use the typeof operator.
+let var = 42;
+if(typeof var === 'number'){
+    console.log("it's a number");
+}
+
+5.how to check if a variable is object or not ?
+let variable = {key: "value"};
+if(typeof variable === 'object' && variable != null){
+    console.log("It's an object");
+}
+
+6.check if a variable is a string .
+let variable ="Hello";
+if(typeof variable === 'String' || variable instanceof String){
+    console.log("it's a string");
+}
+
+7.what is coercion ?
+coercion in js refers to the automatic type conversion that occurs during ceratin operation. 
+there are 2 types:
+1.implicit (automatic) coercion and explicit (mannual) coercion.
+it refers to the conversion of values from one data type to another , either implicitly or explicitly.
+
+8.is js object oriented or functional ?
+JavaScript is a multi-paradigm language supporting both object-oriented and functional programming.
+
+9. how do API calls work ?
+ API calls work by making HTTP requests to a server, typically using methods like `GET`, `POST`, `PUT`, `DELETE`, etc., to retrieve or manipulate data. The server processes the request and sends back a response, often in JSON or XML format, which the client-side code can then use.
+
+10.expalin call back queue and web API ?
+When you make an asynchronous call like fetching data from an API (`fetch`), it runs in the background using the browser's Web API. After it finishes, its callback function goes into a queue. The event loop then moves callbacks from the queue to the main program to execute them.
+
+7/07/24
+
+1. What is String in js ?
+A string in JavaScript is a sequence of characters enclosed in single or double quotes, like `"Hello, World!"`.
+2. difference between stack and heap ?
+In JavaScript, the stack and heap are two different memory areas used for storing data:
+
+1. **Stack:**
+   - **Usage:** Used for static memory allocation.
+   - **Characteristics:** Memory is allocated and freed in a Last-In-First-Out (LIFO) manner.
+   - **Speed:** Faster access compared to the heap.
+   - **Scope:** Typically used for storing primitive data types and function calls.
+   - **Example:** Variables defined within a function.
+
+2. **Heap:**
+   - **Usage:** Used for dynamic memory allocation.
+   - **Characteristics:** Memory can be allocated and freed in any order.
+   - **Speed:** Slower access compared to the stack due to more complex memory management.
+   - **Scope:** Used for objects, arrays, and functions that require dynamic allocation.
+   - **Example:** Objects created using `new` keyword or literal notation, arrays.
+
+In summary, the stack is for static memory with faster access, while the heap is for dynamic memory with more flexible but slower access.
+
+3.what is array in js ?
+An array in JavaScript is a collection of elements stored in a single variable, enclosed in square brackets `[]`, like `[1, 2, 3, 4]`. 
+
+Example:
+```javascript
+let fruits = ["apple", "banana", "cherry"];
+```
+This array stores three string elements.
+
+4. difference between shallow copy and deep copy ?
+In JavaScript:
+
+- **Shallow Copy:** Copies only the top level of an object. Changes to nested objects affect the original.
+  - **Example:**
+    ```javascript
+    let original = { a: 1, b: { c: 2 } };
+    let shallowCopy = { ...original };
+    shallowCopy.b.c = 3; // Also changes original.b.c to 3
+    ```
+
+- **Deep Copy:** Copies all levels of an object. Changes to nested objects do not affect the original.
+  - **Example:**
+    ```javascript
+    let original = { a: 1, b: { c: 2 } };
+    let deepCopy = JSON.parse(JSON.stringify(original));
+    deepCopy.b.c = 3; // Original stays the same
+    ```
+
+5.what is object ? 
+An object in JavaScript is a collection of key-value pairs, where each key is a string (or Symbol) and each value can be any type.
+
+Example:
+```javascript
+let person = {
+  name: "John",
+  age: 30,
+  job: "Developer"
+};
+```
+This object represents a person with properties for name, age, and job.
+
+6.why we use freeze() ?
+In JavaScript, `Object.freeze()` is used to make an object immutable, preventing any changes to its properties or values.
+
+Example:
+```javascript
+let obj = { name: "John" };
+Object.freeze(obj);
+obj.name = "Jane"; // This will not change the name
+```
+
+7.what is async await where we need ?
+`async` and `await` in JavaScript are used to handle asynchronous operations more easily, making code look and behave more like synchronous code.
+
+- **`async`:** Declares an asynchronous function.
+- **`await`:** Pauses the execution of an `async` function until a promise is resolved.
+
+**Example:**
+```javascript
+async function fetchData() {
+  let response = await fetch('https://api.example.com/data');
+  let data = await response.json();
+  console.log(data);
+}
+```
+
+**Usage:** Use `async` and `await` to work with promises in a cleaner, more readable way.
+
+8.what is dom manipulation  ?
+DOM (Document Object Model) manipulation involves changing the structure, style, or content of a web page using JavaScript.
+
+**Example:**
+- **Select an element:**
+  ```javascript
+  let element = document.getElementById('myElement');
+  ```
+
+- **Change content:**
+  ```javascript
+  element.innerHTML = 'Hello, world!';
+  ```
+
+- **Change style:**
+  ```javascript
+  element.style.color = 'blue';
+  ```
+
+In summary, DOM manipulation allows you to dynamically update the web page content and appearance based on user interactions or other events.
+
+9. what is prototype in js ?
+In JavaScript, a prototype is an object from which other objects inherit properties and methods.
+
+**Example:**
+```javascript
+function Person(name) {
+  this.name = name;
+}
+
+Person.prototype.greet = function() {
+  console.log('Hello, ' + this.name);
+};
+
+let john = new Person('John');
+john.greet(); // Outputs: Hello, John
+```
+
+In summary, prototypes allow objects to share methods and properties, enabling inheritance in JavaScript.
+
+10. how js run ?
+JavaScript code is parsed, compiled, and executed by a JavaScript engine, which can be part of a web browser or Node.js on a server.
+
+8/07/24
+
+1.what is fetch request in js ?
+In JavaScript, the `fetch` API is used to make HTTP requests to servers and fetch resources. It provides a modern way to fetch and handle data asynchronously.
+
+**Basic Syntax:**
+```javascript
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // Parse JSON response
+  })
+  .then(data => {
+    console.log(data); // Process fetched data
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  });
+```
+
+**Explanation:**
+- `fetch(url)`: Initiates a fetch request to the specified `url`.
+- `.then(response => { ... })`: Handles the response from the server.
+- `.then(data => { ... })`: Parses and processes the fetched data (e.g., JSON).
+- `.catch(error => { ... })`: Catches and handles any errors that occur during the fetch request.
+
+The `fetch` API is widely used for making AJAX requests in modern web development, replacing older methods like `XMLHttpRequest`.
+
+
+2. what is call, apply, bind?
+In JavaScript, `call`, `apply`, and `bind` are methods used to control the context (`this`) in which a function is executed.
+
+### `call`
+- **Purpose:** Calls a function with a given `this` value and arguments provided individually.
+- **Example:**
+  ```javascript
+  function greet(greeting, punctuation) {
+    console.log(greeting + ', ' + this.name + punctuation);
+  }
+
+  const person = { name: 'Alice' };
+  greet.call(person, 'Hello', '!'); // Outputs: Hello, Alice!
+  ```
+
+### `apply`
+- **Purpose:** Calls a function with a given `this` value and arguments provided as an array.
+- **Example:**
+  ```javascript
+  function greet(greeting, punctuation) {
+    console.log(greeting + ', ' + this.name + punctuation);
+  }
+
+  const person = { name: 'Bob' };
+  greet.apply(person, ['Hi', '.']); // Outputs: Hi, Bob.
+  ```
+
+### `bind`
+- **Purpose:** Creates a new function that, when called, has its `this` value set to a specified value, with optional arguments.
+- **Example:**
+  ```javascript
+  function greet(greeting, punctuation) {
+    console.log(greeting + ', ' + this.name + punctuation);
+  }
+
+  const person = { name: 'Charlie' };
+  const greetPerson = greet.bind(person, 'Hey');
+  greetPerson('!'); // Outputs: Hey, Charlie!
+  ```
+
+### Summary
+- **`call`**: Invokes a function with individual arguments.
+- **`apply`**: Invokes a function with arguments as an array.
+- **`bind`**: Creates a new function with a bound `this` value and optional preset arguments.
+
+3.oops concept in js ?
+Object-Oriented Programming (OOP) in JavaScript involves the use of objects and classes to create reusable and modular code. The core concepts of OOP in JavaScript are:
+
+### 1. **Classes and Objects**
+- **Class**: A blueprint for creating objects.
+- **Object**: An instance of a class.
+
+**Example:**
+```javascript
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  }
+}
+
+const john = new Person('John', 30);
+john.greet(); // Outputs: Hello, my name is John and I am 30 years old.
+```
+
+### 2. **Inheritance**
+- Allows a class to inherit properties and methods from another class.
+
+**Example:**
+```javascript
+class Employee extends Person {
+  constructor(name, age, jobTitle) {
+    super(name, age);
+    this.jobTitle = jobTitle;
+  }
+
+  work() {
+    console.log(`${this.name} is working as a ${this.jobTitle}.`);
+  }
+}
+
+const jane = new Employee('Jane', 25, 'Engineer');
+jane.greet(); // Outputs: Hello, my name is Jane and I am 25 years old.
+jane.work();  // Outputs: Jane is working as an Engineer.
+```
+
+### 3. **Encapsulation**
+- Hides the internal state of an object and only exposes a controlled interface.
+
+**Example:**
+```javascript
+class BankAccount {
+  #balance;
+
+  constructor(balance) {
+    this.#balance = balance;
+  }
+
+  deposit(amount) {
+    if (amount > 0) {
+      this.#balance += amount;
+      console.log(`Deposited: ${amount}. New Balance: ${this.#balance}`);
+    }
+  }
+
+  getBalance() {
+    return this.#balance;
+  }
+}
+
+const account = new BankAccount(100);
+account.deposit(50); // Outputs: Deposited: 50. New Balance: 150
+console.log(account.getBalance()); // Outputs: 150
+```
+
+### 4. **Polymorphism**
+- Allows methods to do different things based on the object it is acting upon.
+
+**Example:**
+```javascript
+class Animal {
+  speak() {
+    console.log('Animal speaks');
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log('Dog barks');
+  }
+}
+
+class Cat extends Animal {
+  speak() {
+    console.log('Cat meows');
+  }
+}
+
+const animals = [new Animal(), new Dog(), new Cat()];
+animals.forEach(animal => animal.speak());
+// Outputs:
+// Animal speaks
+// Dog barks
+// Cat meows
+```
+
+### Summary
+- **Classes and Objects**: Templates for creating instances with properties and methods.
+- **Inheritance**: Allows a class to inherit features from another class.
+- **Encapsulation**: Restricts direct access to some of an object's components.
+- **Polymorphism**: Methods behave differently based on the object they act on.
+
+These OOP principles help in building modular, reusable, and maintainable code in JavaScript.
+
+4. what is hashing in js with example ?
+Hashing in JavaScript is a process where an input (usually a string) is transformed into a fixed-size string of characters, which typically appears random. This is useful for tasks like data storage, data retrieval, and ensuring data integrity.
+
+Here's a simple example using JavaScript:
+
+```javascript
+function simpleHash(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+        const char = str.charCodeAt(i);
+        hash = (hash << 5) - hash + char;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+}
+
+console.log(simpleHash("example")); // Output: a unique hash value
+```
+
+In this example, `simpleHash` function computes a hash value for the input string "example". The `charCodeAt` method gets the Unicode of the character at a specific index, and the bitwise operations combine these values into a single hash.
+
+5.what is set in js with example ?
+In JavaScript, a `Set` is a collection of unique values. This means that a value can only occur once in a `Set`.
+
+### Key Features:
+- **Unique values**: No duplicates are allowed.
+- **Order of insertion**: The values are kept in the order of insertion.
+
+### Example:
+
+```javascript
+// Create a new Set
+const mySet = new Set();
+
+// Add values to the Set
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+mySet.add(2); // This will not be added because 2 is already in the Set
+
+// Check if a value exists
+console.log(mySet.has(1)); // true
+console.log(mySet.has(4)); // false
+
+// Get the size of the Set
+console.log(mySet.size); // 3
+
+// Iterate over the Set
+mySet.forEach(value => {
+  console.log(value); // 1, 2, 3
+});
+
+// Delete a value
+mySet.delete(2);
+console.log(mySet); // Set { 1, 3 }
+
+// Clear the Set
+mySet.clear();
+console.log(mySet.size); // 0
+```
+
+### Explanation:
+1. **Creating a Set**: `const mySet = new Set();`
+2. **Adding values**: `mySet.add(1);`, `mySet.add(2);`, etc. Note that adding a duplicate value (like `mySet.add(2);`) has no effect.
+3. **Checking for values**: `mySet.has(1);` checks if `1` is in the Set.
+4. **Size of the Set**: `mySet.size` gives the number of unique values.
+5. **Iterating**: `mySet.forEach(value => {...})` lets you iterate through the Set.
+6. **Deleting a value**: `mySet.delete(2);` removes `2` from the Set.
+7. **Clearing the Set**: `mySet.clear();` removes all values from the Set.
+
+6. what is map with example ?
+In JavaScript, a `Map` is a collection of key-value pairs where both keys and values can be of any type. It maintains the order of insertion of the key-value pairs.
+
+### Key Features:
+- **Key-value pairs**: Each element is stored as a pair.
+- **Any type for keys**: Unlike objects, keys can be any value including functions, objects, or primitives.
+- **Order of insertion**: The pairs are iterated in the order they were added.
+
+### Example:
+
+```javascript
+// Create a new Map
+const myMap = new Map();
+
+// Add key-value pairs to the Map
+myMap.set('name', 'Alice');
+myMap.set('age', 30);
+myMap.set(1, 'one');
+
+// Get values by keys
+console.log(myMap.get('name')); // Alice
+console.log(myMap.get('age'));  // 30
+console.log(myMap.get(1));      // one
+
+// Check if a key exists
+console.log(myMap.has('name')); // true
+console.log(myMap.has('gender')); // false
+
+// Get the size of the Map
+console.log(myMap.size); // 3
+
+// Iterate over the Map
+myMap.forEach((value, key) => {
+  console.log(key, value); // name Alice, age 30, 1 one
+});
+
+// Delete a key-value pair
+myMap.delete('age');
+console.log(myMap.size); // 2
+
+// Clear the Map
+myMap.clear();
+console.log(myMap.size); // 0
+```
+
+### Explanation:
+1. **Creating a Map**: `const myMap = new Map();`
+2. **Adding key-value pairs**: `myMap.set('name', 'Alice');`, `myMap.set(1, 'one');`
+3. **Getting values by keys**: `myMap.get('name');` returns 'Alice'.
+4. **Checking for keys**: `myMap.has('name');` checks if 'name' is a key in the Map.
+5. **Size of the Map**: `myMap.size` returns the number of key-value pairs.
+6. **Iterating**: `myMap.forEach((value, key) => {...})` lets you iterate through the Map.
+7. **Deleting a key-value pair**: `myMap.delete('age');` removes the pair with key 'age'.
+8. **Clearing the Map**: `myMap.clear();` removes all key-value pairs from the Map.
+
+
+7.convert number array to binary array ?
+const arr = [5,1,3,2,6];
+const output = arr.map((x) =>x.toString(2));
+console.log(output);
+
+
+8. what is map() , filter () , reduce() with example.
+map method is used when we want transformation of whole array.
+ filter is used when we want to filter the arrar to obtain required value.
+ reduce is used when we want to reduce the array to single value eg (max, min, avg, sum, difference etc).
+ reduce passes two arguments one function(which includes accumulator and initial value as argument itself) and another initial value of accumulator.
+
+
+ In JavaScript, `map()`, `filter()`, and `reduce()` are array methods used for transforming, filtering, and aggregating data.
+
+### `map()`
+`map()` creates a new array by applying a function to each element of the original array.
+
+```javascript
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6, 8]
+```
+
+### `filter()`
+`filter()` creates a new array with elements that pass a test implemented by a function.
+
+```javascript
+const numbers = [1, 2, 3, 4];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // [2, 4]
+```
+
+### `reduce()`
+`reduce()` executes a reducer function on each element of the array, resulting in a single output value.
+
+```javascript
+const numbers = [1, 2, 3, 4];
+const sum = numbers.reduce((total, num) => total + num, 0);
+console.log(sum); // 10
+```
+
+### Explanation:
+1. **`map()`**: Transforms each element and returns a new array.
+2. **`filter()`**: Filters elements based on a condition and returns a new array.
+3. **`reduce()`**: Reduces the array to a single value using a reducer function.
+
+9.write about http request response ?
+
+HTTP (Hypertext Transfer Protocol) is a protocol used for transferring data over the web. It works based on a request-response model:
+
+1. **HTTP Request**:
+   - **Client (usually a browser)** sends a request to the server.
+   - Includes a request method (GET, POST, PUT, DELETE, etc.), URL, headers, and sometimes a body (for methods like POST).
+
+2. **HTTP Response**:
+   - **Server** processes the request and sends back a response.
+   - Includes a status code (200 for success, 404 for not found, etc.), headers, and sometimes a body (like HTML content, JSON data, etc.).
+
+This simple mechanism allows clients and servers to communicate and exchange data over the web.
+
+Here's a brief overview of all the main HTTP request methods:
+
+1. **GET**:
+   - **Purpose**: Retrieve data from a server.
+   - **Characteristics**: 
+     - No request body.
+     - Safe (does not alter data on the server).
+     - Idempotent (repeated requests produce the same result).
+   - **Example**: Fetching a list of users from a server.
+     ```http
+     GET /users HTTP/1.1
+     Host: example.com
+     ```
+
+2. **POST**:
+   - **Purpose**: Send data to a server to create a new resource.
+   - **Characteristics**: 
+     - Contains a request body with data.
+     - Not idempotent (repeated requests may create multiple resources).
+   - **Example**: Creating a new user on a server.
+     ```http
+     POST /users HTTP/1.1
+     Host: example.com
+     Content-Type: application/json
+
+     {
+       "name": "John Doe",
+       "email": "john.doe@example.com"
+     }
+     ```
+
+3. **PUT**:
+   - **Purpose**: Send data to a server to update an existing resource.
+   - **Characteristics**: 
+     - Contains a request body with data.
+     - Idempotent (repeated requests with the same data result in the same outcome).
+   - **Example**: Updating user information on a server.
+     ```http
+     PUT /users/1 HTTP/1.1
+     Host: example.com
+     Content-Type: application/json
+
+     {
+       "name": "John Doe",
+       "email": "john.doe@newexample.com"
+     }
+     ```
+
+4. **DELETE**:
+   - **Purpose**: Remove a resource from the server.
+   - **Characteristics**:
+     - Usually does not contain a request body.
+     - Idempotent (repeated requests have the same effect; the resource is deleted).
+   - **Example**: Deleting a user from a server.
+     ```http
+     DELETE /users/1 HTTP/1.1
+     Host: example.com
+     ```
+
+5. **PATCH**:
+   - **Purpose**: Partially update an existing resource on the server.
+   - **Characteristics**:
+     - Contains a request body with the changes.
+     - Not necessarily idempotent, but typically is.
+   - **Example**: Updating the email of a user.
+     ```http
+     PATCH /users/1 HTTP/1.1
+     Host: example.com
+     Content-Type: application/json
+
+     {
+       "email": "john.doe@updatedexample.com"
+     }
+     ```
+
+These methods help define the action a client wants to perform on a server's resources, providing a structured way to interact with web services.
+
+10. what is scope in js with example ? 
+In JavaScript, scope determines the accessibility of variables and functions in different parts of your code. There are two main types of scope:
+
+1. **Global Scope**:
+   - Variables declared outside any function or block are in the global scope.
+   - Accessible from anywhere in the code.
+
+2. **Local Scope**:
+   - Variables declared within a function or block are in the local scope.
+   - Accessible only within that function or block.
+
+**Example**:
+
+```javascript
+// Global Scope
+var globalVar = "I'm global";
+
+function exampleFunction() {
+  // Local Scope (function scope)
+  var localVar = "I'm local";
+
+  console.log(globalVar); // Accessible
+  console.log(localVar);  // Accessible
+}
+
+exampleFunction();
+
+console.log(globalVar); // Accessible
+console.log(localVar);  // Error: localVar is not defined
+```
+
+In this example:
+- `globalVar` is in the global scope and can be accessed anywhere.
+- `localVar` is in the local scope of `exampleFunction` and can only be accessed within that function.
+
+9/07/24
+
+1.what is call stack give example ?
+The call stack in JavaScript manages function calls in a Last In, First Out (LIFO) order.
+
+**Example**:
+
+```javascript
+function firstFunction() {
+  console.log("Start first");
+  secondFunction();
+  console.log("End first");
+}
+
+function secondFunction() {
+  console.log("Start second");
+  thirdFunction();
+  console.log("End second");
+}
+
+function thirdFunction() {
+  console.log("Third function");
+}
+
+firstFunction();
+```
+
+**Call Stack Execution**:
+1. `firstFunction` is called and added to the stack.
+2. `secondFunction` is called within `firstFunction` and added to the stack.
+3. `thirdFunction` is called within `secondFunction` and added to the stack.
+4. `thirdFunction` finishes and is removed from the stack.
+5. `secondFunction` finishes and is removed from the stack.
+6. `firstFunction` finishes and is removed from the stack.
+
+**Output**:
+```plaintext
+Start first
+Start second
+Third function
+End second
+End first
+```
+
+The call stack keeps track of which function is currently running and which functions are waiting to be executed.
+
+2.what is currying in js with example ?
+Currying in JavaScript transforms a function that takes multiple arguments into a series of functions that each take a single argument.
+
+**Example**:
+
+Without currying:
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3)); // 5
+```
+
+With currying:
+```javascript
+function add(a) {
+  return function(b) {
+    return a + b;
+  };
+}
+
+console.log(add(2)(3)); // 5
+```
+
+In the curried version, `add(2)` returns a function that takes `b` and returns `a + b`.
+
+3. create a eventlistener and create button hoe many time it clicked ?
+
+function attachEventListeners(){
+    let count = 0;
+    document.getElementById("clickMe").addEventListener("click",function xyz(){
+        console.log("Button Clicked", ++count);
+    });
+}
+attachEventListeners();
+
+4. what is call back give example ?
+A callback in JavaScript is a function passed into another function as an argument, which is then executed inside the outer function to complete some kind of action.
+
+**Example**:
+
+```javascript
+function fetchData(callback) {
+  setTimeout(() => {
+    console.log("Data fetched");
+    callback();
+  }, 1000);
+}
+
+function processData() {
+  console.log("Data processed");
+}
+
+fetchData(processData);
+```
+
+In this example:
+- `fetchData` takes a callback function (`processData`).
+- `fetchData` simulates data fetching with `setTimeout`.
+- Once the data is fetched, it calls the `processData` callback function.
+
+
+5.what is call back hell ? give one example 
+
+Callback hell in JavaScript refers to a situation where multiple nested callbacks make the code hard to read and maintain.
+
+**Example**:
+
+```javascript
+function firstTask(callback) {
+  setTimeout(() => {
+    console.log("First task done");
+    callback();
+  }, 1000);
+}
+
+function secondTask(callback) {
+  setTimeout(() => {
+    console.log("Second task done");
+    callback();
+  }, 1000);
+}
+
+function thirdTask(callback) {
+  setTimeout(() => {
+    console.log("Third task done");
+    callback();
+  }, 1000);
+}
+
+// Callback hell
+firstTask(() => {
+  secondTask(() => {
+    thirdTask(() => {
+      console.log("All tasks done");
+    });
+  });
+});
+```
+
+In this example, tasks are nested inside each other, creating callback hell.
+
+6. write the area , circumference , diameter of circle using high order function ?
+
+const radius = [3,1,2,4];
+
+const area = function (radius){
+    return Math.PI * radius * radius ;
+};
+
+const circumference = function (radius) {
+    return 2 * Math.PI * radius;
+};
+
+const diameter = function (radius) {
+    return 2* radius;
+};
+
+const calculate = function (radius, logic){
+    const output = [];
+    for(let  i=0 ; i<radius.length; i++){
+        output.push(logic(radius[i]));
+    }
+    return output;
+};
+console.log(calculate(radius, area));
+console.log(calculate(radius, circumference));
+console.log(calculate(radius, diameter));
+
+
+7.what is high order function  give one example ?
+
+A higher-order function in JavaScript is a function that either takes one or more functions as arguments, returns a function, or both.
+
+**Example**:
+
+```javascript
+function higherOrderFunction(callback) {
+  return function(message) {
+    return callback(message);
+  };
+}
+
+function greet(name) {
+  return "Hello, " + name;
+}
+
+const sayHello = higherOrderFunction(greet);
+console.log(sayHello("Alice")); // "Hello, Alice"
+```
+
+In this example:
+- `higherOrderFunction` is a higher-order function because it takes a function (`callback`) as an argument and returns a new function.
+- `greet` is passed to `higherOrderFunction`, creating a new function `sayHello` that can be called with a message.
+
+
+8. how to work promises ?
+
+Promises in JavaScript are used to handle asynchronous operations. They represent a value that may be available now, later, or never.
+
+**How Promises Work**:
+
+1. **Create a Promise**: Use the `Promise` constructor, which takes a function with `resolve` and `reject` parameters.
+2. **Resolve or Reject**: Call `resolve` when the async operation completes successfully, and `reject` when it fails.
+3. **Consume a Promise**: Use `.then()` for success and `.catch()` for failure.
+
+**Example**:
+
+```javascript
+// Create a Promise
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const success = true; // Simulate success or failure
+    if (success) {
+      resolve("Operation successful");
+    } else {
+      reject("Operation failed");
+    }
+  }, 1000);
+});
+
+// Consume the Promise
+myPromise
+  .then(result => {
+    console.log(result); // "Operation successful"
+  })
+  .catch(error => {
+    console.error(error); // "Operation failed"
+  });
+```
+
+In this example:
+- A promise is created that simulates an async operation with `setTimeout`.
+- If successful, it resolves with a message; otherwise, it rejects.
+- The promise is consumed using `.then()` to handle success and `.catch()` to handle failure.
+
+
+9. what is memorization and where can you use it to optimise code ?
+
+memorization is an optimization technique that can be used to reduce time-consuming calculations by 
+saving previous input to something called cache and returning the result from it.
+
+eg.let sum = 0;
+const calc = (n) => {
+   for(let i=0; i<=n ;i++){
+    sum+=i;
+   }
+   return sum ;
+}
+
+const memoize = (fun) => {
+    let cache = {};
+    return function(...args){
+        let n=args[0];
+        if(n in cache){
+            console.log("cache");
+            return cache[n];
+        }else{
+            console.log("calculating first time");
+            let result = fun(n);
+            cache[n] = result;
+            return result;
+        }
+    }
+}
+console.time();
+const efficient = memoize(calc);
+console.log(efficient(5))
+console.timeEnd();
+
+
+console.time();
+
+console.log(efficient(5))
+console.timeEnd();
+
+10. what is debouncing with example ?
+Debouncing in JavaScript is a technique to limit the rate at which a function executes. It ensures that the function is only called after a certain period of time has passed since the last time it was invoked. This is useful for improving performance and avoiding unnecessary function calls, especially in scenarios like handling window resizing, scrolling, or input events.
+
+Here's a simple example of a debounce function:
+
+```javascript
+function debounce(func, delay) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+}
+
+// Usage
+const handleResize = debounce(() => {
+  console.log('Resized');
+}, 500);
+
+window.addEventListener('resize', handleResize);
+```
+
+In this example, `handleResize` will only be executed 500 milliseconds after the last `resize` event.
+
+
+10/07/24
+
+1.what is throttling with example ?
+
+Throttling in JavaScript is a technique to ensure that a function is called at most once in a specified period of time, regardless of how many times the event occurs. This helps to improve performance by reducing the number of function calls.
+
+Here's a simple example of a throttle function:
+
+```javascript
+function throttle(func, limit) {
+  let lastFunc;
+  let lastRan;
+  return function(...args) {
+    const context = this;
+    if (!lastRan) {
+      func.apply(context, args);
+      lastRan = Date.now();
+    } else {
+      clearTimeout(lastFunc);
+      lastFunc = setTimeout(() => {
+        if ((Date.now() - lastRan) >= limit) {
+          func.apply(context, args);
+          lastRan = Date.now();
+        }
+      }, limit - (Date.now() - lastRan));
+    }
+  };
+}
+
+// Usage
+const handleScroll = throttle(() => {
+  console.log('Scroll event');
+}, 1000);
+
+window.addEventListener('scroll', handleScroll);
+```
+
+In this example, `handleScroll` will be executed at most once every 1000 milliseconds (1 second), no matter how many times the `scroll` event is fired.
+
+2.difference between debouncing and throttling ?
+
+Sure! Here's a concise summary:
+
+- **Debouncing**: Delays function execution until a specified time has passed since the last call.
+  - **Example Use**: Waiting for user to stop typing before making an API call.
+
+  ```javascript
+  const debounce = (func, delay) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => func(...args), delay);
+    };
+  };
+  ```
+
+- **Throttling**: Limits function execution to once every specified time interval.
+  - **Example Use**: Handling window resize or scroll events efficiently.
+
+  ```javascript
+  const throttle = (func, limit) => {
+    let inThrottle;
+    return (...args) => {
+      if (!inThrottle) {
+        func(...args);
+        inThrottle = true;
+        setTimeout(() => inThrottle = false, limit);
+      }
+    };
+  };
+  ```
+
+
+  3. which is better in both of them ?
+
+  Sure! Here's a simpler explanation:
+
+- **Debouncing**: Waits until the activity stops to do something.
+  - **Best for**: User typing in a search box.
+  - **Example**: Only search when the user stops typing.
+
+- **Throttling**: Does something at regular intervals while the activity is happening.
+  - **Best for**: Scrolling or resizing the window.
+  - **Example**: Update position while scrolling.
+
+**Which is better?**  
+- **Debouncing**: Use when you want to act after a pause.
+- **Throttling**: Use when you want to act regularly during an action.
+
+**In short**:
+- **Debouncing**: After the action stops.
+- **Throttling**: At regular intervals during the action.
+
+
+4.how to achieve memorization ?
+
+Create a cache: Use an object to store results.
+Check the cache: Before running the function, see if the result is already cached.
+Store the result: If not cached, run the function, store the result, and return it.
+
+
+5. what is pure function ? 
+A pure function in JavaScript always gives the same output for the same inputs and doesn't change anything else outside the function. It's like a math function where you put in numbers and get a result without affecting anything else.
+
+### Characteristics of a Pure Function:
+
+- **Returns the Same Result**: It always produces the same output for the same inputs.
+- **No Side Effects**: It doesn't change anything else outside the function.
+
+### Example of a Pure Function:
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+console.log(add(2, 3));  // Outputs 5
+console.log(add(2, 3));  // Still outputs 5, because it's always the same
+```
+
+### Non-Example (Impure Function):
+
+```javascript
+let total = 0;
+
+function addToTotal(num) {
+  total += num;  // Modifies 'total' outside the function
+  return total;
+}
+
+console.log(addToTotal(5));  // Outputs 5
+console.log(addToTotal(5));  // Outputs 10, because 'total' changed
+```
+
+In essence, pure functions are predictable and don't cause unexpected changes elsewhere in your code.
+
+
+6. what is impure function ?
+An impure function in JavaScript:
+
+- **Changes things outside itself**: It modifies variables or objects that are not local to the function.
+- **Can behave differently each time**: It might return different results for the same inputs or perform actions that vary, like reading user input or fetching data from the internet.
+
+Impure functions can make your code harder to understand and test because they have unpredictable effects and rely on external factors.
+```javascript
+let total = 0;
+
+function addToTotal(num) {
+  total += num;  // Modifies 'total' outside the function
+  return total;
+}
+
+console.log(addToTotal(5));  // Outputs 5
+console.log(addToTotal(5));  // Outputs 10, because 'total' changed
+```
+
+
+7.what is cookie ?
+A cookie in JavaScript is a small file that websites store on your browser. It keeps track of information like your login status or preferences, making your browsing experience smoother.
+
+8.dfference between cookies , local storage , session storage ?
+### Cookies
+- **Size**: Up to 4KB.
+- **Lifetime**: Set by an expiration date; persists between sessions.
+- **Scope**: Sent with every HTTP request to the server.
+- **Use Case**: Authentication, user preferences.
+
+### Local Storage
+- **Size**: Typically 5-10MB.
+- **Lifetime**: Persists until explicitly deleted.
+- **Scope**: Only accessible by the client (browser).
+- **Use Case**: Storing user data and preferences that don't need to be sent to the server.
+
+### Session Storage
+- **Size**: Typically 5-10MB.
+- **Lifetime**: Only lasts for the session; cleared when the page is closed.
+- **Scope**: Only accessible by the client (browser).
+- **Use Case**: Temporary storage for data needed only during a single session.
+
+### Summary
+- **Cookies**: Small, sent to server, set expiration.
+- **Local Storage**: Larger, persists, client-side only.
+- **Session Storage**: Larger, session-only, client-side only.
+
+
+9.what is service worker and where will you use it ?
+A **service worker** is a background script in JavaScript that runs independently of your web page. It helps you manage caching, enabling offline functionality and improving the performance of web applications.
+
+### Key Uses:
+- **Offline Support**: Cache resources so your app works without an internet connection.
+- **Background Sync**: Sync data in the background when the network is available.
+- **Push Notifications**: Send notifications even when the web app is not open.
+
+### Example Usage:
+- **Progressive Web Apps (PWAs)**: Enhance user experience by making web apps fast, reliable, and capable of working offline.
+
+### Basic Example:
+```javascript
+// Registering a service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(() => console.log('Service Worker registered'))
+    .catch((error) => console.log('Service Worker registration failed', error));
+}
+```
+
+Service workers are crucial for creating modern web applications that provide a seamless user experience, even with intermittent or no internet connectivity.
+
+10. difference between promise.race vs promise.all ?
+### `Promise.all`
+- **Waits for all promises**: Resolves when all promises in the array have resolved.
+- **Returns**: An array of results in the same order as the promises.
+- **Rejects**: If any promise rejects, it immediately rejects with that error.
+
+### Example:
+```javascript
+Promise.all([promise1, promise2, promise3])
+  .then(results => {
+    console.log(results); // [result1, result2, result3]
+  })
+  .catch(error => {
+    console.error(error); // Any error from the promises
+  });
+```
+
+### `Promise.race`
+- **Waits for the first promise**: Resolves or rejects as soon as the first promise resolves or rejects.
+- **Returns**: The result or error of the first settled promise.
+
+### Example:
+```javascript
+Promise.race([promise1, promise2, promise3])
+  .then(result => {
+    console.log(result); // Result of the first settled promise
+  })
+  .catch(error => {
+    console.error(error); // Error of the first settled promise
+  });
+```
+
+### Summary:
+- **`Promise.all`**: Waits for all promises to complete.
+- **`Promise.race`**: Waits for the first promise to complete.
+
+11/07/24
+ 
+1.why do we need promises and chaining of promises ?
+
+### Why We Need Promises
+
+**Promises** in JavaScript help manage asynchronous operations, making it easier to handle tasks like fetching data from a server, reading files, or performing time-consuming calculations without blocking the main thread.
+
+### Benefits:
+- **Avoid Callback Hell**: Promises make the code more readable and manageable compared to nested callbacks.
+- **Error Handling**: Promises provide a clear way to handle errors through `.catch()`.
+
+### Example:
+```javascript
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+```
+
+### Chaining of Promises
+
+**Chaining** allows you to perform multiple asynchronous operations in sequence, where each operation starts after the previous one finishes. This makes it easy to handle dependent tasks.
+
+### Benefits:
+- **Sequential Execution**: Each `.then()` gets executed after the previous promise resolves.
+- **Clean Code**: Avoids deeply nested callbacks, making the code more readable.
+
+### Example:
+```javascript
+fetch('https://api.example.com/user')
+  .then(response => response.json())
+  .then(user => {
+    return fetch(`https://api.example.com/user/${user.id}/posts`);
+  })
+  .then(response => response.json())
+  .then(posts => {
+    console.log(posts);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+```
+
+### Summary:
+- **Promises** simplify handling asynchronous tasks and improve code readability.
+- **Chaining Promises** allows for sequential execution of dependent tasks, making complex workflows easier to manage.
+
+
+2. can you write a custom promise ?
+
+A custom promise is a user-defined promise in JavaScript that performs an asynchronous operation and either resolves or rejects based on some condition.
+
+### Custom Promise Example:
+
+```javascript
+function customPromise() {
+  return new Promise((resolve, reject) => {
+    let success = true; // Simulate a condition
+
+    setTimeout(() => {
+      if (success) {
+        resolve('Operation was successful!');
+      } else {
+        reject('Operation failed.');
+      }
+    }, 1000); // Simulate async operation with 1-second delay
+  });
+}
+
+// Using the custom promise
+customPromise()
+  .then(result => {
+    console.log(result); // "Operation was successful!"
+  })
+  .catch(error => {
+    console.error(error); // "Operation failed."
+  });
+```
+
+### Explanation:
+
+1. **Creating the Promise**:
+   - `customPromise` function returns a new `Promise`.
+   - Inside the promise, we simulate a condition with `let success = true`.
+   - `setTimeout` simulates an asynchronous operation.
+
+2. **Resolving or Rejecting**:
+   - If `success` is `true`, `resolve` is called with a success message.
+   - If `success` is `false`, `reject` is called with an error message.
+
+3. **Using the Promise**:
+   - `.then()` handles the resolved case.
+   - `.catch()` handles the rejected case.
+
+This example demonstrates how to create and use a custom promise easily and succinctly.
+
+3.how does a new keyword work in js
+
+The `new` keyword in JavaScript is used to create an instance of an object from a constructor function. It does a few things automatically to set up the new object.
+
+### How `new` Works:
+
+1. **Creates a new object**: A new empty object is created.
+2. **Sets `this`**: The `this` keyword inside the constructor function points to the new object.
+3. **Sets prototype**: The new object's prototype is set to the constructor's `prototype`.
+4. **Returns the object**: The new object is returned, unless the constructor returns a different object.
+
+### Example:
+
+```javascript
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const person1 = new Person('John', 30);
+
+console.log(person1.name); // "John"
+console.log(person1.age);  // 30
+```
+
+### Steps in the Example:
+1. **Create a new object**: `new Person('John', 30)` creates an empty object.
+2. **Set `this`**: Inside `Person`, `this` refers to the new object.
+3. **Set prototype**: The new object's prototype is set to `Person.prototype`.
+4. **Return the object**: The new `Person` object with properties `name` and `age` is returned.
+
+In short, the `new` keyword sets up and returns a new object based on a constructor function.
+
+4.what is api ?
+In JavaScript, an API is often used to interact with web services or browser features. It allows your JavaScript code to send and receive data, making your web applications dynamic and interactive.
+
+### Example: Fetching Data with a Web API
+
+Using the Fetch API to get data from a server:
+
+```javascript
+fetch('https://api.example.com/data')
+  .then(response => response.json())  // Parse the JSON from the response
+  .then(data => {
+    console.log(data);  // Use the data from the API
+  })
+  .catch(error => {
+    console.error('Error:', error);  // Handle any errors
+  });
+```
+
+### Key Points:
+- **Fetch API**: A modern way to make HTTP requests and handle responses.
+- **Response Handling**: Uses promises to handle data retrieval and errors.
+
+In summary, an API in JavaScript allows you to interact with external services and browser features to fetch data, manipulate the DOM, and more.
+
+
+
+
+ 
+
+
+
