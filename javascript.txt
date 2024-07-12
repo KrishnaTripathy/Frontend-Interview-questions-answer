@@ -27,7 +27,7 @@ deepa.start();
 deepa.setBrand("deepa");
 3.Template literals: it is a special strings that allow you to include variables and expressions easily.using backticks (``) instead of regular 
                      quotes and  `${}` to insert values.
-4. let & const : provides block-scoped variables with let , allowing for better variable scopeing .
+4. let & const : provides block-scoped variables with let , allowing for better variable scopeing . let variable can be updated but not redeclare.
                  and const for declaring constants whose value can not be reassigned.
 5.destructuring : enables extracting values from array or object into variable with a simpler syntax.
 eg: let {a,b} = {a=1, b=2}
@@ -1635,6 +1635,40 @@ fetch('https://api.example.com/data')
 
 In summary, an API in JavaScript allows you to interact with external services and browser features to fetch data, manipulate the DOM, and more.
 
+5.what is settimeout() ?
+`setTimeout()` is a JavaScript function that executes a specified function after a set period of time (in milliseconds). It's commonly used to delay the execution of code or to schedule it to run after a certain amount of time.
+
+Here's a simple example:
+
+```javascript
+// Function to be executed after 2 seconds
+function greet() {
+    console.log("Hello, world!");
+}
+
+// Call the greet function after 2000 milliseconds (2 seconds)
+setTimeout(greet, 2000);
+```
+
+In this example, the `greet` function will be executed after a delay of 2000 milliseconds (2 seconds).
+
+You can also use an anonymous function:
+
+```javascript
+setTimeout(function() {
+    console.log("Hello, world!");
+}, 2000);
+```
+
+Or using an arrow function:
+
+```javascript
+setTimeout(() => {
+    console.log("Hello, world!");
+}, 2000);
+```
+
+All three examples will print "Hello, world!" to the console after a delay of 2 seconds.
 
 
 
