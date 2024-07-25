@@ -65,7 +65,8 @@ block level element :
 
 
 11. display between visibility:hidden and display:none ?
-    visibility:hidden : simply hide the element , space is allocated for it on the page.  visibility property is used to hide or show the content of HTML elements. visibility : 'hidden';
+    visibility:hidden : simply hide the element , space is allocated for it on the page. 
+     visibility property is used to hide or show the content of HTML elements. visibility : 'hidden';
 visibility :'visible';
     display:none : hide the element and no space is allocated for it on the page.
 
@@ -173,7 +174,7 @@ HTML templates are reusable structures that help reduce repetition in web pages,
  <datalist> , <keyen> , <output> , <meter> , <progress> with color , date , datetime, time, email , month
 
 10. what is Geo-location in HTML5 ?
-   Geo-location in HTML5 allows web application to accress and use the user's physical location through their device.like a smart phone or computer.
+   Geo-location in HTML5 allows web application to access and use the user's physical location through their device.like a smart phone or computer.
 
 
 6/07/24
@@ -226,7 +227,9 @@ HSL
 HSLA
 
 10.What is the use of alt attribute in images?
-The <img> alt attribute is used to specify the alternate text for an image. It is useful when the image is not displayed. It is used to give alternative information for an image.
+The <img> alt attribute is used to specify the alternate text for an image. 
+It is useful when the image is not displayed.
+ It is used to give alternative information for an image.
 eg: <img alt="text">
 
 7/07/24
