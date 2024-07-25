@@ -4,7 +4,7 @@ eg: @media screen and (max-width:600px){
     body{
         background-color:black;
     }
-}
+} 
 
 2.what is the use of the calc() in CSS ?
 it is like a calculator for styling . it helps you to do math in stylesheet. so you can make your design more flexible and responsive.
@@ -36,7 +36,8 @@ eg: 1. ::before : add content before an element's actual content. it is a firstc
     5. ::selection : style the portion of the text selected by the user.  it applies style to the part of a document that has been highlighted by the user. (such as clicking and dragging the mouse across text.)
 
 7.what is z index function ?
-Creating an overlay effect simply means putting two div together at the same place but both the div appear when needed i.e while hovering or while clicking on one of the div to make the second one appear.
+Creating an overlay effect simply means putting two div together at the same place but both the div appear when needed i.e
+ while hovering or while clicking on one of the div to make the second one appear.
 it is used for specifying over-lapping element, it is a number which can be +ve or -ve  and default value 0 . 
 z-index: auto|number|initial|inherit;
 
@@ -84,10 +85,10 @@ it specifies how an elements content, padding, border and margin are set.
 16.Explain the css float property and its uses.
    float property for element alignment (left or right).The float property defines the flow of content
    uses: text wrapping around images and multi-column layouts.
-   float: left	Element floats on the left side of the container
-float: right	Element floats on the right side of the container
-float: inherit	The element inherits the floating property of its parent (div, table, etc…)
-float: none	Element is displayed as it is (Default).
+float: left	  Element floats on the left side of the container
+float: right	    Element floats on the right side of the container
+float: inherit	  The element inherits the floating property of its parent (div, table, etc…)
+float: none	      Element is displayed as it is (Default).
 
 17.What is the css position property , and what are its values ?
 static: default , normal flow (no special positioning)
@@ -106,7 +107,7 @@ flex-box offers more flexibility in designing layouts and aligning content compa
 20. difference between px , rem , em ?
    px: fixed size eg: font-size:16px;
    rem: relative to root element :  based on the font-size of the root element. eg: font-size: 3rem; (thrice the root element font size)
-   em:relative to parent eleemnt : based on the font size of the parent element. eg: font-size: 1.5 em; (1.5 times the parent element font size)
+   em:relative to parent element : based on the font size of the parent element. eg: font-size: 1.5 em; (1.5 times the parent element font size)
 
 
 5/07/24
@@ -245,7 +246,9 @@ rotateY()
 rotateZ()
 
 2.What are CSS transitions?
-CSS transitions allow you to change property values smoothly (over a given duration) rather than abruptly. They are used to enhance the visual experience by animating changes to CSS properties when an element's state changes, such as on hover, focus, active, or any other state change.
+CSS transitions allow you to change property values smoothly (over a given duration) rather than abruptly.
+ They are used to enhance the visual experience by animating changes to CSS properties when an element's state changes, 
+ such as on hover, focus, active, or any other state change.
 
 Example:
 ```css
@@ -681,6 +684,14 @@ Opacity in CSS3 is specified using the `opacity` property, which sets the transp
   - `opacity: 1;` makes the element fully opaque (normal).
 
 This property affects the entire element, including its children, and can be used with values from `0` (fully transparent) to `1` (fully opaque).
+
+3. difference between fluid vs fixed ?
+
+fluid layout use relative measurements and respond to the width of the view port.
+fixed layouts use static measurements and do not respond to the width of the viewport.
+
+4.specify the order in css ?
+id > class > element
 
 
 
