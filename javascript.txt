@@ -7,7 +7,7 @@ external js: js code can be written in a separate file with a .js extension and 
 ES6 is the 6th major version of js language specification, introducing new features like arrrow function , classes and template literals.
 
 3.write about ES6 features ?
-1. Arrow functions : it is useful for short one-line functions.
+1. Arrow functions : it is useful for short one-line functions.It maintains lexical `this` binding and more readable code compared to traditional functions.
 eg: const add = (x,y) => x+y;
     add(2,3);
 2.classes: introduced class based object oriented programming syntax to js, making it easier to create and manage objects and their behaviour.
@@ -15,6 +15,7 @@ eg: class krishna {
     start() {
         console.log("start");
     } 
+
     stop() {
         console.log("stop");
     }
@@ -68,8 +69,51 @@ undefined means variable declared but not assigned a value.
 7.what is difference between let , const and var ?
 
 var: it is function scoped , can be redeclared.
+var color = "red";
+console.log(color); // red
+
+color = "blue"; // Reassigning the variable
+console.log(color); // blue
+
+if (true) {
+  var color = "green"; // This `color` variable is accessible outside the block due to function-scoping
+  console.log(color); // green
+}
+
+console.log(color); // green (the same `color` variable from inside the block)
+
 let: block scoped , can be reassigned .
+let age = 25;
+console.log(age); // 25
+
+age = 26; // Reassigning the variable
+console.log(age); // 26
+
+if (true) {
+  let age = 30; // This is a different `age` variable, scoped to the block
+  console.log(age); // 30
+}
+
+console.log(age); // 26 (the original `age` outside the block)
+
 const : block scoped constants can not be reassigned.
+
+const birthYear = 1995;
+console.log(birthYear); // 1995
+
+// birthYear = 2000; // This will throw an error: Assignment to constant variable.
+
+if (true) {
+  const birthYear = 2000; // This is a different `birthYear` variable, scoped to the block
+  console.log(birthYear); // 2000
+}
+
+console.log(birthYear); // 1995 (the original `birthYear` outside the block)
+
+const person = { name: "Alice", age: 25 };
+person.age = 26; // Allowed, since we're changing a property, not the variable itself
+console.log(person); // { name: "Alice", age: 26 }
+
 
 8.what are the different datatypes in javascript ?
 
@@ -155,6 +199,7 @@ it create a execution context , then line by line execute the callback function.
 14.How does prototypal inheritance work in Javascript?
 objects inherits properties and methods via their prototype chain. each object posesses a prototype .
 when property and method is absent on an object ,js searches for it in the prototype chain.
+prototype is a reference to an object.
 
 eg: let animal = {
     eats: true
@@ -185,7 +230,7 @@ promise object is a placeholder for a ceratin period of time , until you receive
 
 18.Describe the 'callback hell' problem in JS and how it can be  mitigated.
 call back hell or pyramid of doom occurs due to nested of callback. and making code hard to read.
-mitigation : using promises ans asyn/await to controls call backs , improving cade readability and managability.
+mitigation : using promises and asyn/await to controls call backs , improving code readability and managability.
 
 
 19.name all basic non-primitive datatypes.
@@ -193,31 +238,32 @@ object, array
 
 20.what is the need of js framework ?
 auto ui upgraded.
-auto list generation.
+auto list generation. 
 best code structure
-plug and paly build tools
 easy testing 
 
 5/07/24
 
 1.what are the different types of loop in js ?
-for , for in , while , do while
+for , for in , while , do while , foreach
 
 2. diffence betwwen arrow function and function in js ?
 arrow function are concise and preserve the lexical 'this' context ,
 while regular functions have a more traditional syntax and handle this based on how they are called.
 
 3.what is use strict in js?
- 'use strict' in js activates strict mode , which helps catch errors and enforce safer coding practices.
+ 'use strict' in js activates strict mode , which helps catch errors in coding practices.
 
 4.what is a web worker ?
-A web worker is a JavaScript feature that allows you to run scripts in the background, independently of the user interface, enabling tasks to be performed without freezing the main page.
+A web worker is a JavaScript feature that allows you to run scripts in the background, independently of the user interface,
+ enabling tasks to be performed without freezing the main page.
 
 5.which keyword are used to handle exception ?
 In JavaScript, the keywords used to handle exceptions are `try`, `catch`, `finally`, and `throw`.
 
 6.how do js framework work in background ?
-JavaScript frameworks automate tasks like updating the webpage and managing data, using virtual DOM or efficient change detection to make web applications more responsive and organized.
+JavaScript frameworks automate tasks like updating the webpage and managing data, 
+using virtual DOM or efficient change detection to make web applications more responsive and organized.
 
 7.how to check wheather a variable is array or not ?
 you can use the 'Array.isArray()'  to check wheather a variable is an array or not.
@@ -296,10 +342,16 @@ it refers to the conversion of values from one data type to another , either imp
 JavaScript is a multi-paradigm language supporting both object-oriented and functional programming.
 
 9. how do API calls work ?
- API calls work by making HTTP requests to a server, typically using methods like `GET`, `POST`, `PUT`, `DELETE`, etc., to retrieve or manipulate data. The server processes the request and sends back a response, often in JSON or XML format, which the client-side code can then use.
+ API calls work by making HTTP requests to a server, 
+ typically using methods like `GET`, `POST`, `PUT`, `DELETE`, etc., 
+ to retrieve or manipulate data. The server processes the request and
+  sends back a response, often in JSON or XML format, which the client-side code can then use.
 
 10.expalin call back queue and web API ?
-When you make an asynchronous call like fetching data from an API (`fetch`), it runs in the background using the browser's Web API. After it finishes, its callback function goes into a queue. The event loop then moves callbacks from the queue to the main program to execute them.
+When you make an asynchronous call like fetching data from an API (`fetch`), 
+it runs in the background using the browser's Web API. After it finishes, 
+its callback function goes into a queue.
+The event loop then moves callbacks from the queue to the main program to execute them.
 
 7/07/24
 
@@ -376,7 +428,8 @@ obj.name = "Jane"; // This will not change the name
 ```
 
 7.what is async await where we need ?
-`async` and `await` in JavaScript are used to handle asynchronous operations more easily, making code look and behave more like synchronous code.
+`async` and `await` in JavaScript are used to handle asynchronous operations more easily, 
+making code look and behave more like synchronous code.
 
 - **`async`:** Declares an asynchronous function.
 - **`await`:** Pauses the execution of an `async` function until a promise is resolved.
@@ -411,7 +464,8 @@ DOM (Document Object Model) manipulation involves changing the structure, style,
   element.style.color = 'blue';
   ```
 
-In summary, DOM manipulation allows you to dynamically update the web page content and appearance based on user interactions or other events.
+In summary, DOM manipulation allows you to dynamically update the web page content 
+and appearance based on user interactions or other events.
 
 9. what is prototype in js ?
 In JavaScript, a prototype is an object from which other objects inherit properties and methods.
@@ -512,7 +566,8 @@ In JavaScript, `call`, `apply`, and `bind` are methods used to control the conte
 - **`bind`**: Creates a new function with a bound `this` value and optional preset arguments.
 
 3.oops concept in js ?
-Object-Oriented Programming (OOP) in JavaScript involves the use of objects and classes to create reusable and modular code. The core concepts of OOP in JavaScript are:
+Object-Oriented Programming (OOP) in JavaScript involves the use of objects and classes to create reusable and modular code.
+ The core concepts of OOP in JavaScript are:
 
 ### 1. **Classes and Objects**
 - **Class**: A blueprint for creating objects.
@@ -1670,9 +1725,270 @@ setTimeout(() => {
 
 All three examples will print "Hello, world!" to the console after a delay of 2 seconds.
 
+6. what is slice() give example ?
+slice() can be used with both arrays and strings to extract a portion of the original data.
+It does not modify the original array or string but returns a new array or string with the extracted elements or characters.
+The start index is inclusive, and the end index is exclusive.
+Negative indices can be used to extract elements or characters from the end of the array or string.
+
+let fruits = ['apple', 'banana', 'cherry', 'date', 'fig'];
+
+let citrus = fruits.slice(1, 3);
+console.log(citrus); // Output: ['banana', 'cherry']
+
+console.log(fruits); // Output: ['apple', 'banana', 'cherry', 'date', 'fig'] - original array remains unchanged
 
 
+let fruits = ['apple', 'banana', 'cherry', 'date', 'fig'];
+
+let endFruits = fruits.slice(-3);
+console.log(endFruits); // Output: ['cherry', 'date', 'fig']
+
+
+7. what is split() give example ?
+The split() method breaks a string into an array of smaller strings.
+You specify the character or pattern to split by (e.g., space, comma).
+You can limit the number of splits if needed.
+
+eg. let sentence = "one two three four";
+let limitedSplit = sentence.split(" ", 2);
+console.log(limitedSplit); // Output: ["one", "two"]
+
+
+8. create a variable of array datatypes and log variable type using the typeof operator.
+Here’s an example of creating an array in JavaScript and logging its type using the `typeof` operator:
+
+```javascript
+// Create an array
+let myArray = [1, 2, 3, 4, 5];
+
+// Log the variable type using the typeof operator
+console.log(typeof myArray); // Output: "object"
+```
+
+In JavaScript, the `typeof` operator will return "object" for arrays because arrays are a special type of object. To check specifically if a variable is an array, you can use the `Array.isArray` method:
+
+```javascript
+// Check if the variable is an array
+console.log(Array.isArray(myArray)); // Output: true
+
+let myArray = [1, 2, 3, 4, 5];
+console.log(Array.isArray(myArray) ? 'array' : typeof myArray); // Output: "array"
+
+```
+
+This code will correctly identify that `myArray` is an array by outputting `true`.
+
+9.declare a variable using let assign it an initial value reassign a new value and log both values to the console ?
+Here’s how you can declare a variable using `let`, assign it an initial value, reassign it a new value, and log both values to the console:
+
+```javascript
+// Declare a variable and assign it an initial value
+let myVariable = 10;
+console.log('Initial value:', myVariable); // Output: Initial value: 10
+
+// Reassign a new value to the variable
+myVariable = 20;
+console.log('New value:', myVariable); // Output: New value: 20
+```
+
+10.write a script that declares variables of different types and logs both the value and typeof each variable to the console.
+// Declare variables of different types
+let myNumber = 42;            // Number
+let myString = "Hello, world!"; // String
+let myBoolean = true;         // Boolean
+let myObject = { name: "Alice", age: 25 }; // Object
+let myArray = [1, 2, 3, 4, 5]; // Array
+let myUndefined;              // Undefined
+let myNull = null;            // Null
+let mySymbol = Symbol("id");  // Symbol
+let myFunction = function() { // Function
+  return "I am a function";
+};
+
+// Log the value and typeof each variable to the console
+console.log("myNumber:", myNumber, "typeof:", typeof myNumber);
+console.log("myString:", myString, "typeof:", typeof myString);
+console.log("myBoolean:", myBoolean, "typeof:", typeof myBoolean);
+console.log("myObject:", myObject, "typeof:", typeof myObject);
+console.log("myArray:", myArray, "typeof:", Array.isArray(myArray) ? 'array' : typeof myArray);
+console.log("myUndefined:", myUndefined, "typeof:", typeof myUndefined);
+console.log("myNull:", myNull, "typeof:", typeof myNull); // Note: typeof null is "object"
+console.log("mySymbol:", mySymbol, "typeof:", typeof mySymbol);
+console.log("myFunction:", myFunction, "typeof:", typeof myFunction);
+
+//output
+
+myNumber: 42 typeof: number
+myString: Hello, world! typeof: string
+myBoolean: true typeof: boolean
+myObject: { name: 'Alice', age: 25 } typeof: object
+myArray: [ 1, 2, 3, 4, 5 ] typeof: array
+myUndefined: undefined typeof: undefined
+myNull: null typeof: object
+mySymbol: Symbol(id) typeof: symbol
+myFunction: [Function: myFunction] typeof: function
+
+
+
+12/07/24
+
+1.how to remove duplicate characters or words in 2 different approaches. 
+
+//ways 1 - using set()
+
+let str = "I like iron man but not supr man I like"
  
+ * 1st i convert entire string into words
+
+ let set =  new Set();
+ let words = str.toLowerCase().split(" ")
+ words.forEach(ele => {
+  set.add(ele)
+ })
+ console.log(set);  //op:Set(7) {'I', 'like', 'iron', 'man', 'but', …}
+
+
+ //ways 2 : Filter & IndexOf
+
+function removeDuplicateWords(str) {
+    const words = str.split(/\s+/); // Split the string into words
+    const uniqueWords = words.filter((word, index) => words.indexOf(word) === index);
+    return uniqueWords.join(' ');
+}
+
+// Example usage:
+let str = "I like iron man but not supr man I like";
+const result = removeDuplicateWords(str);
+console.log(result); // Output: "I like iron man but not supr"
+
+
+2.find the duplicate word in string ?
+
+function findDuplicateWords(str) {
+    const words = str.toLowerCase().split(/\s+/); // Split the string into words and convert to lowercase
+    const duplicates = words.filter((word, index) => words.indexOf(word) !== index);
+    return [...new Set(duplicates)]; // Remove duplicates from the result
+}
+
+// Example usage:
+let str = "I like iron man but not supr man I like";
+const duplicates = findDuplicateWords(str);
+console.log(duplicates); // Output: ["i", "like", "man"]
+
+// other ways
+
+function findDuplicateWords(str) {
+    const words = str.toLowerCase().split(/\s+/); // Split the string into words and convert to lowercase
+    const seenWords = new Set();
+    const duplicates = new Set();
+
+    words.forEach(word => {
+        if (seenWords.has(word)) {
+            duplicates.add(word);
+        } else {
+            seenWords.add(word);
+        }
+    });
+
+    return [...duplicates];
+}
+
+// Example usage:
+let str = "I like iron man but not supr man I like";
+const duplicates = findDuplicateWords(str);
+console.log(duplicates); // Output: ["i", "like", "man"]
+
+
+
+3.what is the next pallindrom no which i put in the input box in js ?
+
+function isPalindrome(num) {
+    const str = num.toString();
+    return str === str.split('').reverse().join('');
+}
+
+function nextPalindrome(num) {
+    let nextNum = num + 1;
+    while (!isPalindrome(nextNum)) {
+        nextNum++;
+    }
+    return nextNum;
+}
+
+// Example usage:
+let inputNumber = 123; // You can change this to any number you want to test
+const result = nextPalindrome(inputNumber);
+console.log(result); // Output: 131 (the next palindrome number after 123)
+
+
+4.To create an input box where you can enter a number and start a countdown from that number to zero using JavaScript ?
+
+function startCountdown() {
+    const input = document.getElementById('countdownInput');
+    const display = document.getElementById('countdownDisplay');
+    let countdownValue = parseInt(input.value);
+
+    if (isNaN(countdownValue) || countdownValue < 0) {
+        display.innerHTML = "Please enter a valid positive number.";
+        return;
+    }
+
+    const countdownInterval = setInterval(() => {
+        display.innerHTML = countdownValue;
+        countdownValue--;
+
+        if (countdownValue < 0) {
+            clearInterval(countdownInterval);
+            display.innerHTML = "Countdown finished!";
+        }
+    }, 1000); // 1000ms = 1 second
+}
+
+5.what is onKeyup() ?
+The onkeyup event triggers when a key is released on the keyboard. It’s useful for capturing user input, real-time form validation, and live search features.
+onkeyup helps you perform actions when keys are released.
+Usage: Real-time input capture, form validation, live search, etc.
+
+6.what is contenteditable attribute ?
+The contenteditable attribute in HTML is used to specify whether the content of an element is editable or not. When an element has the contenteditable attribute set to true, the user can directly edit the content within that element, similar to how one would edit text in a word processor.
+
+7.what is execCommand ?
+**execCommand** is a JavaScript method that lets you control and change text and formatting directly in a web page. You can use it to make text bold, italicize it, create lists, and more, all through your code.
+
+### Key Points:
+- **Purpose**: Changes how text looks and behaves on a web page.
+- **Usage**: Typically used with `document.execCommand('commandName', false/true, 'optionalValue')`.
+- **Examples**: Bold text, create lists, format paragraphs.
+
+### Example:
+```javascript
+document.execCommand('bold', false, null); // Makes selected text bold
+```
+
+In simple terms, `execCommand` gives you power to change text and format it right from your JavaScript code.
+
+
+7.what is trim() ?
+The trim() method in JavaScript removes whitespace from both ends of a string. It does not change the original string but returns a new string with the whitespace removed.
+let str = "   Hello, World!   ";
+let trimmedStr = str.trim();
+console.log(trimmedStr); // "Hello, World!"
+
+
+8.what is repeat() ?
+The repeat() method in JavaScript creates a new string by repeating the original string a specified number of times.
+let str = "Hello!";
+let repeatedStr = str.repeat(3);
+console.log(repeatedStr); // "Hello!Hello!Hello!"
+
+9. types of promises and explain it ?
+
+resolve: This function is called to indicate that the promise has been fulfilled successfully. It can be used to pass a value when the promise resolves.
+
+reject: This function is called to indicate that the promise has been rejected. It is used to pass an error or reason for the rejection.
+
+
 
 
 
