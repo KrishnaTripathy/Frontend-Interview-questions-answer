@@ -1,0 +1,454 @@
+1. Difference between dbms and rdms?
+dbms (database management system) is a software that is used to define, create , and maintain a database and provides controlled  access to the data.
+WE CAN STORE THE DB IN KEY, Document ETC.
+rdbms (Realational database management system) is used to store or manage only the data that are in the form of tables.
+eg. mysql, postgreSQL, ORACLE ETC. RDBMS 
+
+2. What is primary key ?
+primary key is a column or group of columns in a table  that uniquely identifies a row of data in that table.
+pk = unique + Not Null
+
+3. what is candidate key ?
+4.what is foreign key ?
+-A foreign key is a column or group of columns  in a one table , that refers to the primary key in another table.
+-the table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table.
+-it maintains referential integrity in database.
+
+5.What are constraints and their types ?
+
+sql : constraints are used to specify rule for the data in a table.
+Not null : ensures that a column can not have a NULL value.
+UNIQUE : ensures that all values in a column are different
+primary key : A combination of a NOT NULL AND UNIQUE. uniquely identifies each row in a table.
+foreign key : prevents actions that would destroy links between tables.
+check :ensure that the values in a column satisfies a specific condition.
+default :set the default value for a column if no value is specified 
+
+
+6.different types of sql commands ?
+
+SQL commands are categorized into five primary types based on their functionality:
+
+1. **Data Definition Language (DDL)**:
+
+   - **CREATE**: Creates new tables, databases, or other database objects.
+   - **ALTER**: Modifies existing database objects.
+   - **DROP**: Deletes database objects.
+   - **TRUNCATE**: Removes all records from a table, including all spaces allocated for the records.
+
+2. **Data Manipulation Language (DML)**: 
+   - **SELECT**: Retrieves data from the database.
+   - **INSERT**: Adds new records to a table.
+   - **UPDATE**: Modifies existing records.
+   - **DELETE**: Removes records from a table.
+
+3. **Data Control Language (DCL)**: 
+   - **GRANT**: Gives user access privileges to the database.
+   - **REVOKE**: Withdraws user access privileges.
+
+4. **Transaction Control Language (TCL)**: 
+   - **COMMIT**: Saves the current transaction.
+   - **ROLLBACK**: Reverts changes made by the current transaction.
+   - **SAVEPOINT**: Sets a point within a transaction to which you can later roll back.
+
+5. **Data Query Language (DQL)**: 
+   - **SELECT**: Primarily used to query and retrieve data from the database. (Often grouped with DML but sometimes considered separate due to its querying nature.)
+
+These commands help manage and manipulate the data stored in relational databases efficiently.
+
+7.differentiate delete , drop , and truncate ?
+delete : delete the rows from a table eg: DML -can be rolled back
+drop :  removes a table from the database eg: DDL - can not be rolled back
+truncate :remove all the rows from a table . eg: DDL -can not be rolled back
+
+7. Differentiate group by and order by ?
+
+group by : group by clause is applicable when we want to use aggregate functions to more than one set or rows.
+order by : the order by clause is applicable when we want to get the data obtained by a query in the sorting order.
+
+
+8.Types of joins ?
+
+cross join : a cross join returns all possible combination of rows of two tables (also called cartesian product).
+
+inner join : an inner join is also known as simpler join returns row from joined tables that have matching rows.
+it does not include rows from either table that have no matching rows in the order .
+
+left join :
+
+right join :
+
+full join :
+
+
+
+9.Nested subquery vs Correlated subquery ?
+
+In nested query , inner query runs first ,and only once. 
+outer query is executed with result from inner query. (bottom approach)
+
+
+Sure, here's a brief comparison between nested subqueries and correlated subqueries:
+
+### Nested Subquery
+- **Definition**: A subquery that is independent of the outer query. It runs once and the result is passed to the outer query.
+- **Execution**: Executes once for the entire query.
+- **Example**:
+  ```sql
+  SELECT name
+  FROM employees
+  WHERE department_id IN (SELECT id FROM departments WHERE location = 'New York');
+  ```
+
+### Correlated Subquery
+- **Definition**: A subquery that depends on the outer query. It uses values from the outer query and runs for each row processed by the outer query.
+- **Execution**: Executes once for each row of the outer query.
+- **Example**:
+  ```sql
+  SELECT name
+  FROM employees e
+  WHERE salary > (SELECT AVG(salary) FROM employees WHERE department_id = e.department_id);
+  ```
+
+In summary, nested subqueries run independently, while correlated subqueries depend on and run for each row of the outer query.
+
+
+10. pattern matching 
+
+where name LIKE 'a%.
+
+
+11. find the 2nd highest salary ?
+
+SELECT salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 1 OFFSET N-1;
+
+12. sql vs NoSQL ?
+
+SQL is the programming language used to interface with relational databases.
+
+NoSql is a class of DBMS  that are non relational and generally do not use sql. 
+store the database as a document.
+
+13.varchar vs varchar2 ?
+varchar is ANSI standard and varchar2  is oracle standard.
+
+14. what is triggers ?
+a trigger is a special type of stored procedure that automatically runs when an event occurs in the database server.
+ek table main entry karu baki table main automatically entry ho jayega. 
+
+15.plsql
+
+
+16. ACID Properties 
+
+-atomicity
+-consistency
+-Isolation 
+-durability
+
+
+Sure, here's a simple explanation of each ACID property:
+
+1. **Atomicity**:
+   - **Definition**: All operations in a transaction are completed, or none are.
+   - **Easy Way**: It's like an "all-or-nothing" deal. If one part of the transaction fails, the whole transaction fails and the database remains unchanged.
+
+2. **Consistency**:
+   - **Definition**: A transaction brings the database from one valid state to another.
+   - **Easy Way**: The database must always be in a valid state. If a transaction starts with the database in a valid state, it must end with the database in a valid state.
+
+3. **Isolation**:
+   - **Definition**: Transactions are isolated from each other and do not affect each other.
+   - **Easy Way**: Imagine transactions happening in separate rooms; one transaction won't know or interfere with the other until they are finished.
+
+4. **Durability**:
+   - **Definition**: Once a transaction is committed, it remains so, even in the case of a system failure.
+   - **Easy Way**: It’s like saving your work; once you save (commit) it, it's safe and won’t be lost, even if the computer crashes.
+
+These properties ensure reliable and secure database transactions.
+
+//sql query
+
+17.find the 3rd highest salary from the EmployeeInfo table.
+
+select salary from EmployeeInfo order BY salary limit 2,1 ;
+
+LIMIT 2,1 ; - select one row after 2nd row 
+
+
+18.Write a query to find the Nth highest salary from the table without using TOP / limit keyword.
+
+select salary from EmployeeInfo e1 where N-1 = (select COUNT(distinct salary) from EmployeeInfo e2 where e2.salary > e1.salary);
+
+19.write sql query to find duplicate rows in a table.
+
+select *, COUNT(empid) from EmployeeInfo GROUP BY empid HAVING COUNT(empid)>1;
+
+20. write a query to calculate the even and odd records from a table.
+
+//for even
+
+select * from EmployeeInfo where MOD(EmpID,2)=0;
+
+//FOR odd
+select * from EmployeeInfo where MOD(EmpID,2)=1;
+
+21.WRITE a query to display the first and the last record from the EmployeeInfo table.
+
+
+//for first record
+
+select * from EmployeeInfo where EmpID = (select MIN(EmpID) from EmployeeInfo);
+
+//for last record 
+
+select * from EmployeeInfo where empid = (select MAX(empid) FROM EmployeeInfo);
+
+
+22.HOW DO YOU copy all rows of a table using SQL query ?
+
+create table empDetails AS SELECT * FROM EmployeeInfo;
+
+create table EmpSalary AS select EmpId,salary from EmployeeInfo;
+
+create table empDetails as select * from EmployeeInfo where 3=4;
+
+
+23.write a query to retrive the list of emps working in the same department.
+
+select DISTINCT E.EmpID, E.EmpFname, E.Department from EmployeeInfo E, EmployeeInfo e1 where E.Department = E1.Department AND e.empid != e1.empid;
+
+
+24.WRITE A QUERY TO retrive the last 3 records from the EmployeeInfo table.
+
+select * from (select * from EmployeeInfo orderby empid desc limit 3) temp orderby empid asc;
+
+select * from temp orderby EmpID ASC;
+
+25.WRITE A QUERY TO fetch details of employees whose EmpLname ends with an alphabet 'A' and contains five alphabets.
+
+select * from EmployeeInfo where EmpLname LIKE '_____a';
+
+26. what is clustured index ?
+
+A clustered index is a type of database index that sorts and stores the data rows of a table based on the index key. In a clustered index, the data rows are stored in the same order as the index, making data retrieval faster for range queries and ordered searches. Each table can have only one clustered index because the data rows themselves are arranged in the order of the index.
+
+A clustered index is like a book's table of contents, where the pages are arranged in the same order as the index.
+
+### Example:
+
+Imagine you have a table called `Books`:
+
+```sql
+CREATE TABLE Books (
+    BookID INT PRIMARY KEY,
+    Title NVARCHAR(100),
+    Author NVARCHAR(100)
+);
+```
+
+You create a clustered index on `BookID`:
+
+```sql
+CREATE CLUSTERED INDEX IDX_BookID ON Books(BookID);
+```
+
+When you add books to this table:
+
+```sql
+INSERT INTO Books (BookID, Title, Author) VALUES (3, 'Book C', 'Author C');
+INSERT INTO Books (BookID, Title, Author) VALUES (1, 'Book A', 'Author A');
+INSERT INTO Books (BookID, Title, Author) VALUES (2, 'Book B', 'Author B');
+```
+
+The books will be stored in order of `BookID`:
+
+1. `BookID = 1, Title = 'Book A', Author = 'Author A'`
+2. `BookID = 2, Title = 'Book B', Author = 'Author B'`
+3. `BookID = 3, Title = 'Book C', Author = 'Author C'`
+
+This order helps you quickly find a book by `BookID`, just like quickly finding a chapter by its number in the table of contents.
+
+
+27. write what is trigger and types of triggers ?
+
+A trigger is a special type of stored procedure in a database that automatically runs or "triggers" when certain events occur in a table or view.
+
+### Types of Triggers:
+
+1. **Before Triggers**:
+   - **BEFORE INSERT**: Executes before a new row is inserted.
+   - **BEFORE UPDATE**: Executes before an existing row is updated.
+   - **BEFORE DELETE**: Executes before an existing row is deleted.
+
+2. **After Triggers**:
+   - **AFTER INSERT**: Executes after a new row is inserted.
+   - **AFTER UPDATE**: Executes after an existing row is updated.
+   - **AFTER DELETE**: Executes after an existing row is deleted.
+
+### Example:
+
+If you have a table `Orders`:
+
+```sql
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    OrderDate DATE,
+    Amount DECIMAL(10, 2)
+);
+```
+
+You can create an AFTER INSERT trigger to log new orders:
+
+```sql
+CREATE TRIGGER LogNewOrder
+AFTER INSERT ON Orders
+FOR EACH ROW
+BEGIN
+    INSERT INTO OrderLogs (OrderID, LogDate)
+    VALUES (NEW.OrderID, NOW());
+END;
+```
+
+In this example, every time a new order is inserted into the `Orders` table, the trigger automatically logs the order into the `OrderLogs` table.
+
+
+28. what is self join ?
+
+A self join is a type of join where a table is joined with itself. It is used to compare rows within the same table.
+
+### Example:
+
+Consider a table `Employees`:
+
+```sql
+CREATE TABLE Employees (
+    EmployeeID INT,
+    Name NVARCHAR(50),
+    ManagerID INT
+);
+```
+
+To find each employee and their manager from the same `Employees` table, you use a self join:
+
+```sql
+SELECT e1.Name AS Employee, e2.Name AS Manager
+FROM Employees e1
+JOIN Employees e2 ON e1.ManagerID = e2.EmployeeID;
+```
+
+In this example, `e1` and `e2` are aliases for the same `Employees` table. This query matches each employee with their manager.
+
+
+29.what is normalization ?
+
+Normalization is a process in database design to organize data to reduce redundancy and improve data integrity. It involves dividing a database into smaller, related tables and defining relationships between them.
+
+### Example:
+
+Imagine you have a table with customer orders:
+
+| OrderID | CustomerName | CustomerAddress | Product |
+|---------|--------------|-----------------|---------|
+| 1       | John Doe     | 123 Main St     | Widget  |
+| 2       | Jane Smith   | 456 Oak St      | Gadget  |
+| 3       | John Doe     | 123 Main St     | Gizmo   |
+
+After normalization, you would separate the data into two tables:
+
+**Customers Table:**
+
+| CustomerID | CustomerName | CustomerAddress |
+|------------|--------------|-----------------|
+| 1          | John Doe     | 123 Main St     |
+| 2          | Jane Smith   | 456 Oak St      |
+
+**Orders Table:**
+
+| OrderID | CustomerID | Product |
+|---------|------------|---------|
+| 1       | 1          | Widget  |
+| 2       | 2          | Gadget  |
+| 3       | 1          | Gizmo   |
+
+This reduces redundancy and ensures that customer information is stored in one place.
+
+
+30.difference between primary key and foreign key ?
+
+### Primary Key:
+- **Uniqueness**: Uniquely identifies each row in a table.
+- **No Nulls**: Cannot contain null values.
+- **Example**: In an `Employees` table, `EmployeeID` could be a primary key.
+
+### Foreign Key:
+- **Reference**: A column or group of columns that refers to the primary key of another table.
+- **Maintains Relationships**: Ensures referential integrity between tables.
+- **Example**: In an `Orders` table, `CustomerID` could be a foreign key referencing `CustomerID` in a `Customers` table.
+
+### Example:
+
+**Customers Table:**
+
+| CustomerID (Primary Key) | CustomerName |
+|--------------------------|--------------|
+| 1                        | John Doe     |
+| 2                        | Jane Smith   |
+
+**Orders Table:**
+
+| OrderID | CustomerID (Foreign Key) | Product |
+|---------|--------------------------|---------|
+| 101     | 1                        | Widget  |
+| 102     | 2                        | Gadget  |
+
+
+31.what is injection ?
+In SQL, "injection" usually refers to **SQL Injection**, a type of security vulnerability. It happens when attackers insert malicious SQL code into an input field, allowing them to manipulate the database.
+
+### Example:
+
+Without proper validation, an attacker can input:
+
+```sql
+' OR '1'='1
+```
+
+In a login form, turning a query like this:
+
+```sql
+SELECT * FROM Users WHERE Username = 'admin' AND Password = '';
+```
+
+Into this:
+
+```sql
+SELECT * FROM Users WHERE Username = 'admin' OR '1'='1';
+```
+
+This grants unauthorized access.
+
+### Prevention:
+
+- Use prepared statements or parameterized queries.
+- Validate and sanitize user inputs.
+- Use ORM (Object-Relational Mapping) frameworks.
+
+By following these practices, you can protect your application from SQL Injection attacks.
+
+ 
+
+32. what is subquery?
+
+A subquery is a query nested within another SQL query. It is used to perform operations that can provide a value or set of values to the main query. Subqueries can be used in various clauses like `SELECT`, `FROM`, `WHERE`, and `HAVING`.
+
+### Example:
+```sql
+SELECT employee_name
+FROM employees
+WHERE employee_id IN (SELECT employee_id FROM sales WHERE sales_amount > 10000);
+```
+Here, the subquery `(SELECT employee_id FROM sales WHERE sales_amount > 10000)` provides a list of `employee_id`s to the main query.
